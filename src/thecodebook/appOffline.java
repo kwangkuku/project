@@ -17,6 +17,8 @@ public class appOffline extends javax.swing.JFrame {
      */
     public appOffline() {
         initComponents();
+        rating1.setVisible(false);
+        rating2.setVisible(false);
     }
 
     /**
@@ -31,7 +33,7 @@ public class appOffline extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
+        tabJava = new javax.swing.JPanel();
         java1 = new javax.swing.JLabel();
         java2 = new javax.swing.JLabel();
         java3 = new javax.swing.JLabel();
@@ -41,7 +43,7 @@ public class appOffline extends javax.swing.JFrame {
         btnSJava = new javax.swing.JButton();
         scrool = new javax.swing.JScrollPane();
         showCode = new javax.swing.JTextArea();
-        jPanel4 = new javax.swing.JPanel();
+        tabCsh = new javax.swing.JPanel();
         csh1 = new javax.swing.JLabel();
         csh2 = new javax.swing.JLabel();
         csh3 = new javax.swing.JLabel();
@@ -51,7 +53,7 @@ public class appOffline extends javax.swing.JFrame {
         btnSCShap = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jPanel6 = new javax.swing.JPanel();
+        tabPy = new javax.swing.JPanel();
         searchPython = new javax.swing.JTextField();
         btnSPython = new javax.swing.JButton();
         pyt1 = new javax.swing.JLabel();
@@ -61,7 +63,7 @@ public class appOffline extends javax.swing.JFrame {
         pyt5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jPanel7 = new javax.swing.JPanel();
+        tabVB = new javax.swing.JPanel();
         searchVB = new javax.swing.JTextField();
         btnSVB = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -85,8 +87,9 @@ public class appOffline extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         site = new javax.swing.JComboBox<>();
         searchStEx = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        showCodeSite = new javax.swing.JTextArea();
+        showCodeSite1 = new javax.swing.JLabel();
+        showCodeSite2 = new javax.swing.JLabel();
+        showCodeSite3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -101,6 +104,7 @@ public class appOffline extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         showResult = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
+        update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,10 +123,10 @@ public class appOffline extends javax.swing.JFrame {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabJava.setBackground(new java.awt.Color(255, 255, 255));
+        tabJava.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
+                tabJavaMouseClicked(evt);
             }
         });
 
@@ -177,14 +181,14 @@ public class appOffline extends javax.swing.JFrame {
         showCode.setRows(5);
         scrool.setViewportView(showCode);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabJavaLayout = new javax.swing.GroupLayout(tabJava);
+        tabJava.setLayout(tabJavaLayout);
+        tabJavaLayout.setHorizontalGroup(
+            tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabJavaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(tabJavaLayout.createSequentialGroup()
                         .addComponent(searchJava, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSJava, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
@@ -194,18 +198,18 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(java4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(java5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+                .addComponent(scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        tabJavaLayout.setVerticalGroup(
+            tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabJavaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchJava, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSJava, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabJavaLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(java1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -216,17 +220,17 @@ public class appOffline extends javax.swing.JFrame {
                         .addComponent(java4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(java5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 199, Short.MAX_VALUE))
+                        .addGap(0, 578, Short.MAX_VALUE))
                     .addComponent(scrool))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("  Java  ", jPanel3);
+        jTabbedPane1.addTab("  Java  ", tabJava);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabCsh.setBackground(new java.awt.Color(255, 255, 255));
+        tabCsh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel4MouseClicked(evt);
+                tabCshMouseClicked(evt);
             }
         });
 
@@ -251,38 +255,38 @@ public class appOffline extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabCshLayout = new javax.swing.GroupLayout(tabCsh);
+        tabCsh.setLayout(tabCshLayout);
+        tabCshLayout.setHorizontalGroup(
+            tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabCshLayout.createSequentialGroup()
+                .addGroup(tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabCshLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(csh4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
                             .addComponent(csh3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(csh2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(csh5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(csh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(tabCshLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(searchCshap, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSCShap)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        tabCshLayout.setVerticalGroup(
+            tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabCshLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSCShap, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchCshap, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(tabCshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabCshLayout.createSequentialGroup()
                         .addComponent(csh1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(csh2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,34 +296,54 @@ public class appOffline extends javax.swing.JFrame {
                         .addComponent(csh4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(csh5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 212, Short.MAX_VALUE))
+                        .addGap(0, 591, Short.MAX_VALUE))
                     .addComponent(jScrollPane2))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("    C#    ", jPanel4);
+        jTabbedPane1.addTab("    C#    ", tabCsh);
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        tabPy.setBackground(new java.awt.Color(255, 255, 255));
+        tabPy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabPyMouseClicked(evt);
+            }
+        });
 
         searchPython.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
         btnSPython.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
         btnSPython.setText("   Search   ");
+        btnSPython.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSPythonActionPerformed(evt);
+            }
+        });
+
+        pyt1.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        pyt2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        pyt3.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        pyt4.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        pyt5.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
         jTextArea3.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabPyLayout = new javax.swing.GroupLayout(tabPy);
+        tabPy.setLayout(tabPyLayout);
+        tabPyLayout.setHorizontalGroup(
+            tabPyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabPyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(tabPyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pyt4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(tabPyLayout.createSequentialGroup()
                         .addComponent(searchPython, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSPython))
@@ -328,20 +352,20 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(pyt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pyt3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        tabPyLayout.setVerticalGroup(
+            tabPyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabPyLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(tabPyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabPyLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(searchPython, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSPython))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(tabPyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabPyLayout.createSequentialGroup()
                         .addComponent(pyt1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(pyt2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -351,14 +375,14 @@ public class appOffline extends javax.swing.JFrame {
                         .addComponent(pyt4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(pyt5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 191, Short.MAX_VALUE))
+                        .addGap(0, 570, Short.MAX_VALUE))
                     .addComponent(jScrollPane3))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab(" Python ", jPanel6);
+        jTabbedPane1.addTab(" Python ", tabPy);
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        tabVB.setBackground(new java.awt.Color(255, 255, 255));
 
         btnSVB.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
         btnSVB.setText("   Search   ");
@@ -368,20 +392,20 @@ public class appOffline extends javax.swing.JFrame {
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabVBLayout = new javax.swing.GroupLayout(tabVB);
+        tabVB.setLayout(tabVBLayout);
+        tabVBLayout.setHorizontalGroup(
+            tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabVBLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addComponent(searchVB, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSVB)
                         .addContainerGap())
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(tabVBLayout.createSequentialGroup()
+                        .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -390,38 +414,38 @@ public class appOffline extends javax.swing.JFrame {
                             .addComponent(vb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(vb2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(vb3, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE))
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tabVBLayout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGroup(tabVBLayout.createSequentialGroup()
                                 .addGap(18, 18, Short.MAX_VALUE)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(tabVBLayout.createSequentialGroup()
                                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGroup(tabVBLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE))))))
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE))))))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        tabVBLayout.setVerticalGroup(
+            tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabVBLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(searchVB))
                     .addComponent(btnSVB))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addComponent(vb1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
                         .addComponent(vb2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,18 +454,18 @@ public class appOffline extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(tabVBLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -449,7 +473,7 @@ public class appOffline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("   VB   ", jPanel7);
+        jTabbedPane1.addTab("   VB   ", tabVB);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -472,19 +496,28 @@ public class appOffline extends javax.swing.JFrame {
             }
         });
 
-        showCodeSite.setColumns(20);
-        showCodeSite.setRows(5);
-        jScrollPane1.setViewportView(showCodeSite);
+        showCodeSite1.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
+        showCodeSite1.setForeground(new java.awt.Color(0, 0, 51));
+        showCodeSite1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showCodeSite1MouseClicked(evt);
+            }
+        });
+
+        showCodeSite2.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
+        showCodeSite2.setForeground(new java.awt.Color(0, 0, 51));
+
+        showCodeSite3.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
+        showCodeSite3.setForeground(new java.awt.Color(0, 0, 51));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel13)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,9 +529,16 @@ public class appOffline extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(searchStEx)))
-                        .addGap(0, 93, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(searchStEx))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showCodeSite2, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(showCodeSite1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,9 +551,13 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchStEx))
+                .addGap(34, 34, 34)
+                .addComponent(showCodeSite1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(showCodeSite2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Stake Exchang  ", jPanel2);
@@ -548,6 +592,10 @@ public class appOffline extends javax.swing.JFrame {
 
         userName2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
+        rating2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st35.png"))); // NOI18N
+
+        rating1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
+
         showResult.setColumns(20);
         showResult.setRows(5);
         jScrollPane5.setViewportView(showResult);
@@ -569,8 +617,8 @@ public class appOffline extends javax.swing.JFrame {
                             .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel20)
@@ -606,7 +654,7 @@ public class appOffline extends javax.swing.JFrame {
                             .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -617,15 +665,30 @@ public class appOffline extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
+        update.setBackground(new java.awt.Color(255, 0, 0));
+        update.setFont(new java.awt.Font("Aharoni", 1, 24)); // NOI18N
+        update.setText("  UPDATE  ");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(321, 321, 321)
+                .addComponent(update)
+                .addContainerGap(688, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(update)
+                .addContainerGap(687, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Update  ", jPanel8);
@@ -806,29 +869,42 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_java3MouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+
+        java1.setText(" Java Code Samples  Google Developers " + searchJava.getText());
+        java2.setText(searchJava.getText() + "  Defining Data Classes with JDO");
+        java3.setText(searchJava.getText() + "  Java - Date & Time ");
+        java4.setText(" simple " + searchJava.getText());
+        java5.setText(" JDBC - Sample, Example Code " + searchJava.getText());
+
         csh1.setText("Load Data Source Dataflow Sample Code (C#) " + searchJava.getText());
         csh2.setText(searchJava.getText() + " c# - Storing data in code");
         csh3.setText("markrendle/Simple.Data - C# " + searchJava.getText());
         csh4.setText("C# SQL Server Connection " + searchJava.getText());
         csh5.setText(searchJava.getText() + " C# SQL Server Connection ");
+
+        pyt1.setText("Python " + searchPython.getText() + " Access - TutorialsPoint");
+        pyt2.setText(searchPython.getText() + "  Basic Python / Beginner Code");
+        pyt3.setText(searchPython.getText() + "  Python Programming ");
+        pyt4.setText("An Introduction to " + searchPython.getText() + " with Python");
+        pyt5.setText("Full Stack Python " + searchPython.getText());
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+    private void tabCshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabCshMouseClicked
         csh1.setText("Load Data Source Dataflow Sample Code (C#) " + searchJava.getText());
         csh2.setText(searchJava.getText() + " c# - Storing data in code");
         csh3.setText("markrendle/Simple.Data - C# " + searchJava.getText());
         csh4.setText("C# SQL Server Connection " + searchJava.getText());
         csh5.setText(searchJava.getText() + " C# SQL Server Connection ");
-    }//GEN-LAST:event_jPanel4MouseClicked
+    }//GEN-LAST:event_tabCshMouseClicked
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+    private void tabJavaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabJavaMouseClicked
         java1.setText("Java Code Samples  Google Developers " + searchJava.getText());
         java2.setText(searchJava.getText() + "  Defining Data Classes with JDO");
         java3.setText(searchJava.getText() + "  Java - Date & Time ");
         java4.setText("simple " + searchJava.getText());
         java5.setText("JDBC - Sample, Example Code " + searchJava.getText());
 
-    }//GEN-LAST:event_jPanel3MouseClicked
+    }//GEN-LAST:event_tabJavaMouseClicked
 //String st23 = "/images/st25.png";
     private void btnSearchCodeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCodeUserActionPerformed
         resultTitle1.setText(searchCodeUser.getText() + " Examples");
@@ -840,6 +916,9 @@ public class appOffline extends javax.swing.JFrame {
         //  String st23 = "/images/st25.png";
         //  rating1.setText(st25);
 
+        rating1.setVisible(true);
+        rating2.setVisible(true);
+        
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
     private void resultTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultTitle1MouseClicked
@@ -891,77 +970,56 @@ public class appOffline extends javax.swing.JFrame {
                 + "                           + anArray[8]);\n"
                 + "        System.out.println(\"Element at index 9: \"\n"
                 + "                           + anArray[9]);\n"
-                + "    }\n"
-                + "} ");
+                + "\n"
+                + "} "
+        );
 
 
     }//GEN-LAST:event_resultTitle1MouseClicked
 
     private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
 
-        showCodeSite.setText(question.getText() + "  ----> Stack Overflow : "
-                + "\n"
-                + "___________________________________________________________________________________________________________________________"
-                + "\n"
+        showCodeSite1.setText(
+                question.getText() + "Board & Card " + question.getText()
                 + "\n"
                 + "\n"
-                
-                + "import java.sql.*;\n"
-                + "\n"
-                + "public class JDBCExample {\n"
-                + "\n"
-                + "   static final String JDBC_DRIVER = \"com.mysql.jdbc.Driver\";  \n"
-                + "   static final String DB_URL = \"jdbc:mysql://localhost/\";\n"
-                + "\n"
-                + "\n"
-                + "   static final String USER = \"username\";\n"
-                + "   static final String PASS = \"password\";\n"
-                + "   \n"
-                + "   public static void main(String[] args) {\n"
-                + "   Connection conn = null;\n"
-                + "   Statement stmt = null;\n"
-                + "   try{\n"
-                + "\n"
-                + "      Class.forName(\"com.mysql.jdbc.Driver\");\n"
-                + "\n"
-                + "\n"
-                + "      System.out.println(\"Connecting to database...\");\n"
-                + "      conn = DriverManager.getConnection(DB_URL, USER, PASS);\n"
-                + "\n"
-                
-                + "      System.out.println(\"Creating database...\");\n"
-                + "      stmt = conn.createStatement();\n"
-                + "      \n"
-                + "      String sql = \"CREATE DATABASE STUDENTS\";\n"
-                + "      stmt.executeUpdate(sql);\n"
-                + "      System.out.println(\"Database created successfully...\");\n"
-                + "   }catch(SQLException se){\n"
-                + "\n"
-                + "      se.printStackTrace();\n"
-                + "   }catch(Exception e){\n"
-                + "\n"
-                + "      e.printStackTrace();\n"
-                + "   }finally{\n"
-                + "\n"
-                + "      try{\n"
-                + "         if(stmt!=null)\n"
-                + "            stmt.close();\n"
-                + "      }catch(SQLException se2){\n"
-                + " }\n"
-                + "      try{\n"
-                + "         if(conn!=null)\n"
-                + "            conn.close();\n"
-                + "      }catch(SQLException se){\n"
-                + "         se.printStackTrace();\n"
-                + "      }\n"
-                + "   }\n"
-                + "   System.out.println(\"Goodbye!\");\n"
-                + "}\n"
-                + "}"
         );
 
+        showCodeSite2.setText(
+                question.getText() + " Development Stack Exchange"
+                + "\n"
+                + "\n");
+
+        showCodeSite3.setText(
+                question.getText() + question.getText() + " when the story continues via progeny");
 
     }//GEN-LAST:event_searchStExActionPerformed
+
+    private void tabPyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabPyMouseClicked
+        pyt1.setText("Python " + searchPython.getText() + " Access - TutorialsPoint");
+        pyt2.setText(searchPython.getText() + "  Basic Python / Beginner Code");
+        pyt3.setText(searchPython.getText() + "  Python Programming ");
+        pyt4.setText("An Introduction to " + searchPython.getText() + " with Python");
+        pyt5.setText("Full Stack Python " + searchPython.getText());
+    }//GEN-LAST:event_tabPyMouseClicked
+
+    private void btnSPythonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSPythonActionPerformed
+        pyt1.setText("Python " + searchPython.getText() + " Access - TutorialsPoint");
+        pyt2.setText(searchPython.getText() + "  Basic Python / Beginner Code");
+        pyt3.setText(searchPython.getText() + "  Python Programming ");
+        pyt4.setText("An Introduction to " + searchPython.getText() + " with Python");
+        pyt5.setText("Full Stack Python " + searchPython.getText());
+    }//GEN-LAST:event_btnSPythonActionPerformed
+
+    private void showCodeSite1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showCodeSite1MouseClicked
+       //openWebsite
+       
+    }//GEN-LAST:event_showCodeSite1MouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+     //popupCheckForUpdate
+     
+    }//GEN-LAST:event_updateMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1026,13 +1084,8 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1064,9 +1117,16 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JButton searchStEx;
     private javax.swing.JTextField searchVB;
     private javax.swing.JTextArea showCode;
-    private javax.swing.JTextArea showCodeSite;
+    private javax.swing.JLabel showCodeSite1;
+    private javax.swing.JLabel showCodeSite2;
+    private javax.swing.JLabel showCodeSite3;
     private javax.swing.JTextArea showResult;
     private javax.swing.JComboBox<String> site;
+    private javax.swing.JPanel tabCsh;
+    private javax.swing.JPanel tabJava;
+    private javax.swing.JPanel tabPy;
+    private javax.swing.JPanel tabVB;
+    private javax.swing.JButton update;
     private javax.swing.JLabel userName1;
     private javax.swing.JLabel userName2;
     private javax.swing.JLabel vb1;
