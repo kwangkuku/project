@@ -11,8 +11,7 @@ package thecodebook;
  */
 public class appOffline extends javax.swing.JFrame {
 
-   // String st23 = "/images/st25.png";
-
+    // String st23 = "/images/st25.png";
     /**
      * Creates new form appOffline
      */
@@ -87,7 +86,7 @@ public class appOffline extends javax.swing.JFrame {
         site = new javax.swing.JComboBox<>();
         searchStEx = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        showCodeSite = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -467,10 +466,15 @@ public class appOffline extends javax.swing.JFrame {
 
         searchStEx.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
         searchStEx.setText("Search");
+        searchStEx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchStExActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        showCodeSite.setColumns(20);
+        showCodeSite.setRows(5);
+        jScrollPane1.setViewportView(showCodeSite);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -834,7 +838,7 @@ public class appOffline extends javax.swing.JFrame {
         userName2.setText("by.Kwang");
 
         //  String st23 = "/images/st25.png";
-      //  rating1.setText(st25);
+        //  rating1.setText(st25);
 
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
@@ -892,6 +896,72 @@ public class appOffline extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_resultTitle1MouseClicked
+
+    private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
+
+        showCodeSite.setText(question.getText() + "  ----> Stack Overflow : "
+                + "\n"
+                + "___________________________________________________________________________________________________________________________"
+                + "\n"
+                + "\n"
+                + "\n"
+                
+                + "import java.sql.*;\n"
+                + "\n"
+                + "public class JDBCExample {\n"
+                + "\n"
+                + "   static final String JDBC_DRIVER = \"com.mysql.jdbc.Driver\";  \n"
+                + "   static final String DB_URL = \"jdbc:mysql://localhost/\";\n"
+                + "\n"
+                + "\n"
+                + "   static final String USER = \"username\";\n"
+                + "   static final String PASS = \"password\";\n"
+                + "   \n"
+                + "   public static void main(String[] args) {\n"
+                + "   Connection conn = null;\n"
+                + "   Statement stmt = null;\n"
+                + "   try{\n"
+                + "\n"
+                + "      Class.forName(\"com.mysql.jdbc.Driver\");\n"
+                + "\n"
+                + "\n"
+                + "      System.out.println(\"Connecting to database...\");\n"
+                + "      conn = DriverManager.getConnection(DB_URL, USER, PASS);\n"
+                + "\n"
+                
+                + "      System.out.println(\"Creating database...\");\n"
+                + "      stmt = conn.createStatement();\n"
+                + "      \n"
+                + "      String sql = \"CREATE DATABASE STUDENTS\";\n"
+                + "      stmt.executeUpdate(sql);\n"
+                + "      System.out.println(\"Database created successfully...\");\n"
+                + "   }catch(SQLException se){\n"
+                + "\n"
+                + "      se.printStackTrace();\n"
+                + "   }catch(Exception e){\n"
+                + "\n"
+                + "      e.printStackTrace();\n"
+                + "   }finally{\n"
+                + "\n"
+                + "      try{\n"
+                + "         if(stmt!=null)\n"
+                + "            stmt.close();\n"
+                + "      }catch(SQLException se2){\n"
+                + " }\n"
+                + "      try{\n"
+                + "         if(conn!=null)\n"
+                + "            conn.close();\n"
+                + "      }catch(SQLException se){\n"
+                + "         se.printStackTrace();\n"
+                + "      }\n"
+                + "   }\n"
+                + "   System.out.println(\"Goodbye!\");\n"
+                + "}\n"
+                + "}"
+        );
+
+
+    }//GEN-LAST:event_searchStExActionPerformed
 
     /**
      * @param args the command line arguments
@@ -968,7 +1038,6 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
@@ -995,6 +1064,7 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JButton searchStEx;
     private javax.swing.JTextField searchVB;
     private javax.swing.JTextArea showCode;
+    private javax.swing.JTextArea showCodeSite;
     private javax.swing.JTextArea showResult;
     private javax.swing.JComboBox<String> site;
     private javax.swing.JLabel userName1;
