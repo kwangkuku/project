@@ -11,6 +11,8 @@ package thecodebook;
  */
 public class appOffline extends javax.swing.JFrame {
 
+   // String st23 = "/images/st25.png";
+
     /**
      * Creates new form appOffline
      */
@@ -91,6 +93,14 @@ public class appOffline extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         searchCodeUser = new javax.swing.JTextField();
         btnSearchCodeUser = new javax.swing.JButton();
+        resultTitle1 = new javax.swing.JLabel();
+        userName1 = new javax.swing.JLabel();
+        resultTitle2 = new javax.swing.JLabel();
+        userName2 = new javax.swing.JLabel();
+        rating2 = new javax.swing.JLabel();
+        rating1 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        showResult = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -515,24 +525,58 @@ public class appOffline extends javax.swing.JFrame {
 
         btnSearchCodeUser.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
         btnSearchCodeUser.setText("Search");
+        btnSearchCodeUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCodeUserActionPerformed(evt);
+            }
+        });
+
+        resultTitle1.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+        resultTitle1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resultTitle1MouseClicked(evt);
+            }
+        });
+
+        userName1.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        resultTitle2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        userName2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        showResult.setColumns(20);
+        showResult.setRows(5);
+        jScrollPane5.setViewportView(showResult);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel19))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
+                        .addGap(84, 84, 84)
                         .addComponent(jLabel20)
                         .addGap(18, 18, 18)
                         .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSearchCodeUser)))
-                .addContainerGap(340, Short.MAX_VALUE))
+                        .addComponent(btnSearchCodeUser))
+                    .addComponent(jLabel19)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(346, 346, 346))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -545,7 +589,24 @@ public class appOffline extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSearchCodeUser)))
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userName1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rating1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("  Share Code  ", jPanel5);
@@ -605,7 +666,7 @@ public class appOffline extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchJavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchJavaActionPerformed
-       
+
     }//GEN-LAST:event_searchJavaActionPerformed
 
     private void btnSJavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSJavaActionPerformed
@@ -741,29 +802,96 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_java3MouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-        csh1.setText("Load Data Source Dataflow Sample Code (C#) "+searchJava.getText());
+        csh1.setText("Load Data Source Dataflow Sample Code (C#) " + searchJava.getText());
         csh2.setText(searchJava.getText() + " c# - Storing data in code");
-        csh3.setText("markrendle/Simple.Data - C# " +searchJava.getText());
+        csh3.setText("markrendle/Simple.Data - C# " + searchJava.getText());
         csh4.setText("C# SQL Server Connection " + searchJava.getText());
-        csh5.setText(searchJava.getText()+ " C# SQL Server Connection ");
+        csh5.setText(searchJava.getText() + " C# SQL Server Connection ");
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        csh1.setText("Load Data Source Dataflow Sample Code (C#) "+searchJava.getText());
+        csh1.setText("Load Data Source Dataflow Sample Code (C#) " + searchJava.getText());
         csh2.setText(searchJava.getText() + " c# - Storing data in code");
-        csh3.setText("markrendle/Simple.Data - C# " +searchJava.getText());
+        csh3.setText("markrendle/Simple.Data - C# " + searchJava.getText());
         csh4.setText("C# SQL Server Connection " + searchJava.getText());
-        csh5.setText(searchJava.getText()+ " C# SQL Server Connection ");
+        csh5.setText(searchJava.getText() + " C# SQL Server Connection ");
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-       java1.setText("Java Code Samples  Google Developers " + searchJava.getText());
+        java1.setText("Java Code Samples  Google Developers " + searchJava.getText());
         java2.setText(searchJava.getText() + "  Defining Data Classes with JDO");
         java3.setText(searchJava.getText() + "  Java - Date & Time ");
         java4.setText("simple " + searchJava.getText());
         java5.setText("JDBC - Sample, Example Code " + searchJava.getText());
- 
+
     }//GEN-LAST:event_jPanel3MouseClicked
+//String st23 = "/images/st25.png";
+    private void btnSearchCodeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCodeUserActionPerformed
+        resultTitle1.setText(searchCodeUser.getText() + " Examples");
+        resultTitle2.setText("2D " + searchCodeUser.getText() + " Examples");
+
+        userName1.setText("by.Eiji");
+        userName2.setText("by.Kwang");
+
+        //  String st23 = "/images/st25.png";
+      //  rating1.setText(st25);
+
+    }//GEN-LAST:event_btnSearchCodeUserActionPerformed
+
+    private void resultTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultTitle1MouseClicked
+        showResult.setText(resultTitle1.getText()
+                + "\n"
+                + "___________________________________________________________________________________________________________________________"
+                + "\n"
+                + "\n"
+                + "\n"
+                + " class ArrayDemo {\n"
+                + "    public static void main(String[] args) {\n"
+                + "        // declares an array of integers\n"
+                + "        int[] anArray;\n"
+                + "\n"
+                + "        // allocates memory for 10 integers\n"
+                + "        anArray = new int[10];\n"
+                + "           \n"
+                + "        // initialize first element\n"
+                + "        anArray[0] = 100;\n"
+                + "        // initialize second element\n"
+                + "        anArray[1] = 200;\n"
+                + "        // and so forth\n"
+                + "        anArray[2] = 300;\n"
+                + "        anArray[3] = 400;\n"
+                + "        anArray[4] = 500;\n"
+                + "        anArray[5] = 600;\n"
+                + "        anArray[6] = 700;\n"
+                + "        anArray[7] = 800;\n"
+                + "        anArray[8] = 900;\n"
+                + "        anArray[9] = 1000;\n"
+                + "\n"
+                + "        System.out.println(\"Element at index 0: \"\n"
+                + "                           + anArray[0]);\n"
+                + "        System.out.println(\"Element at index 1: \"\n"
+                + "                           + anArray[1]);\n"
+                + "        System.out.println(\"Element at index 2: \"\n"
+                + "                           + anArray[2]);\n"
+                + "        System.out.println(\"Element at index 3: \"\n"
+                + "                           + anArray[3]);\n"
+                + "        System.out.println(\"Element at index 4: \"\n"
+                + "                           + anArray[4]);\n"
+                + "        System.out.println(\"Element at index 5: \"\n"
+                + "                           + anArray[5]);\n"
+                + "        System.out.println(\"Element at index 6: \"\n"
+                + "                           + anArray[6]);\n"
+                + "        System.out.println(\"Element at index 7: \"\n"
+                + "                           + anArray[7]);\n"
+                + "        System.out.println(\"Element at index 8: \"\n"
+                + "                           + anArray[8]);\n"
+                + "        System.out.println(\"Element at index 9: \"\n"
+                + "                           + anArray[9]);\n"
+                + "    }\n"
+                + "} ");
+
+
+    }//GEN-LAST:event_resultTitle1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -838,6 +966,7 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
@@ -854,6 +983,10 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JLabel pyt4;
     private javax.swing.JLabel pyt5;
     private javax.swing.JTextField question;
+    private javax.swing.JLabel rating1;
+    private javax.swing.JLabel rating2;
+    private javax.swing.JLabel resultTitle1;
+    private javax.swing.JLabel resultTitle2;
     private javax.swing.JScrollPane scrool;
     private javax.swing.JTextField searchCodeUser;
     private javax.swing.JTextField searchCshap;
@@ -862,7 +995,10 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JButton searchStEx;
     private javax.swing.JTextField searchVB;
     private javax.swing.JTextArea showCode;
+    private javax.swing.JTextArea showResult;
     private javax.swing.JComboBox<String> site;
+    private javax.swing.JLabel userName1;
+    private javax.swing.JLabel userName2;
     private javax.swing.JLabel vb1;
     private javax.swing.JLabel vb2;
     private javax.swing.JLabel vb3;
