@@ -25,6 +25,8 @@ public class appOffline extends javax.swing.JFrame {
         initComponents();
         rating1.setVisible(false);
         rating2.setVisible(false);
+        rating3.setVisible(false);
+        rating4.setVisible(false);
 
         //test fuction
         /*
@@ -153,6 +155,12 @@ public class appOffline extends javax.swing.JFrame {
         userName2 = new javax.swing.JLabel();
         rating2 = new javax.swing.JLabel();
         rating1 = new javax.swing.JLabel();
+        resultTitle3 = new javax.swing.JLabel();
+        resultTitle4 = new javax.swing.JLabel();
+        userName3 = new javax.swing.JLabel();
+        userName4 = new javax.swing.JLabel();
+        rating3 = new javax.swing.JLabel();
+        rating4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -618,7 +626,7 @@ public class appOffline extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("  Stake Exchang  ", jPanel2);
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel19.setFont(new java.awt.Font("Aharoni", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 102, 255));
@@ -650,9 +658,23 @@ public class appOffline extends javax.swing.JFrame {
 
         userName2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
-        rating2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
+        rating2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/35.png"))); // NOI18N
 
-        rating1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
+        rating1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/45.jpg"))); // NOI18N
+
+        resultTitle3.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+        resultTitle3.setForeground(new java.awt.Color(0, 0, 153));
+
+        resultTitle4.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+        resultTitle4.setForeground(new java.awt.Color(0, 0, 153));
+
+        userName3.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        userName4.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+
+        rating3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/35.png"))); // NOI18N
+
+        rating4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/25.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -662,25 +684,32 @@ public class appOffline extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel20)
                         .addGap(18, 18, 18)
                         .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSearchCodeUser))
-                    .addComponent(jLabel19))
+                    .addComponent(jLabel19)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(resultTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                .addComponent(resultTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(resultTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(userName3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(userName4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rating3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rating4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(346, 346, 346))
         );
         jPanel5Layout.setVerticalGroup(
@@ -701,11 +730,21 @@ public class appOffline extends javax.swing.JFrame {
                         .addComponent(userName1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rating1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resultTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(userName3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rating3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(resultTitle3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(userName4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rating4, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(resultTitle4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Shared Code  ", jPanel5);
@@ -828,14 +867,21 @@ public class appOffline extends javax.swing.JFrame {
     private void btnSearchCodeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCodeUserActionPerformed
         resultTitle1.setText(searchCodeUser.getText() + " Examples");
         resultTitle2.setText("2D " + searchCodeUser.getText() + " Examples");
+        resultTitle3.setText("Code easy to use " + searchCodeUser.getText() + " Examples");
+        resultTitle4.setText(searchCodeUser.getText() + "Code Advance");
 
         userName1.setText("by.Eiji");
         userName2.setText("by.Kwang");
+        userName3.setText("by.pop");
+        userName4.setText("by.Kwanrudee");
+        
 
         //  String st23 = "/images/st25.png";
         //  rating1.setText(st25);
         rating1.setVisible(true);
         rating2.setVisible(true);
+        rating3.setVisible(true);
+        rating4.setVisible(true);
 
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
@@ -1039,8 +1085,12 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JTextField question;
     private javax.swing.JLabel rating1;
     private javax.swing.JLabel rating2;
+    private javax.swing.JLabel rating3;
+    private javax.swing.JLabel rating4;
     private javax.swing.JLabel resultTitle1;
     private javax.swing.JLabel resultTitle2;
+    private javax.swing.JLabel resultTitle3;
+    private javax.swing.JLabel resultTitle4;
     private javax.swing.JScrollPane scrool;
     private javax.swing.JTextField searchCodeUser;
     private javax.swing.JTextField searchCshap;
@@ -1062,6 +1112,8 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JPanel tabVB;
     private javax.swing.JLabel userName1;
     private javax.swing.JLabel userName2;
+    private javax.swing.JLabel userName3;
+    private javax.swing.JLabel userName4;
     private javax.swing.JLabel vb1;
     private javax.swing.JLabel vb2;
     private javax.swing.JLabel vb3;
