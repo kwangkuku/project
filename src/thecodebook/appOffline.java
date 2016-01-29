@@ -48,7 +48,7 @@ public class appOffline extends javax.swing.JFrame {
             model.addElement(s);
         }
         this.listJava.setModel(model);
-        
+
     }
 
     /**
@@ -117,6 +117,9 @@ public class appOffline extends javax.swing.JFrame {
         showCodeSite1 = new javax.swing.JLabel();
         showCodeSite2 = new javax.swing.JLabel();
         showCodeSite3 = new javax.swing.JLabel();
+        sh21 = new javax.swing.JLabel();
+        sh22 = new javax.swing.JLabel();
+        sh23 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -401,7 +404,7 @@ public class appOffline extends javax.swing.JFrame {
                         .addComponent(searchVB, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSVB, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 551, Short.MAX_VALUE))
                     .addGroup(tabVBLayout.createSequentialGroup()
                         .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -425,8 +428,8 @@ public class appOffline extends javax.swing.JFrame {
                                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(tabVBLayout.createSequentialGroup()
-                                .addGap(165, 165, 165)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))))))
+                                .addGap(42, 42, 42)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))))))
         );
         tabVBLayout.setVerticalGroup(
             tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,6 +486,11 @@ public class appOffline extends javax.swing.JFrame {
 
         site.setFont(new java.awt.Font("Aharoni", 0, 18)); // NOI18N
         site.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Stack Overflow", "Web Applications", "Game Development", "Programmers", "Web Master" }));
+        site.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                siteActionPerformed(evt);
+            }
+        });
 
         searchStEx.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
         searchStEx.setText("Search");
@@ -493,19 +501,29 @@ public class appOffline extends javax.swing.JFrame {
         });
 
         showCodeSite1.setBackground(new java.awt.Color(0, 0, 0));
-        showCodeSite1.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
-        showCodeSite1.setForeground(new java.awt.Color(0, 0, 51));
+        showCodeSite1.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showCodeSite1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         showCodeSite1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 showCodeSite1MouseClicked(evt);
             }
         });
 
-        showCodeSite2.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
-        showCodeSite2.setForeground(new java.awt.Color(0, 0, 51));
+        showCodeSite2.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showCodeSite2.setForeground(new java.awt.Color(0, 0, 204));
+        showCodeSite2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        showCodeSite3.setFont(new java.awt.Font("Aharoni", 1, 16)); // NOI18N
-        showCodeSite3.setForeground(new java.awt.Color(0, 0, 51));
+        showCodeSite3.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showCodeSite3.setForeground(new java.awt.Color(0, 102, 0));
+        showCodeSite3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        sh21.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+
+        sh22.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        sh22.setForeground(new java.awt.Color(0, 0, 204));
+
+        sh23.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        sh23.setForeground(new java.awt.Color(0, 102, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -528,13 +546,14 @@ public class appOffline extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(searchStEx))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(showCodeSite2, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(showCodeSite1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showCodeSite1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                            .addComponent(showCodeSite2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sh21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sh22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sh23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -548,13 +567,19 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchStEx))
-                .addGap(34, 34, 34)
-                .addComponent(showCodeSite1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(showCodeSite2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(showCodeSite1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showCodeSite2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showCodeSite3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(sh21, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sh22, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sh23, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Stake Exchang  ", jPanel2);
@@ -778,13 +803,13 @@ public class appOffline extends javax.swing.JFrame {
         java5.setText(" JDBC - Sample, Example Code " + searchJava.getText());
 
          */
-        
+
         DefaultListModel<String> model = new DefaultListModel<String>();
         for (Object s : list) {
             if (((String) s).contains(this.searchJava.getText().toString())) {
                 model.addElement(s.toString());
             }
-            
+
         }
         this.listJava.setModel(model);
     }//GEN-LAST:event_btnSJavaActionPerformed
@@ -833,7 +858,7 @@ public class appOffline extends javax.swing.JFrame {
     private void btnSearchCodeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCodeUserActionPerformed
         resultTitle1.setText(searchCodeUser.getText() + " Examples");
         resultTitle2.setText("2D " + searchCodeUser.getText() + " Examples");
-        
+
         userName1.setText("by.Eiji");
         userName2.setText("by.Kwang");
 
@@ -896,25 +921,39 @@ public class appOffline extends javax.swing.JFrame {
                 + "\n"
                 + "} "
         );
-        
+
 
     }//GEN-LAST:event_resultTitle1MouseClicked
 
     private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
-        
+
         showCodeSite1.setText(
-                question.getText() + "Board & Card " + question.getText()
-                + "\n"
-                + "\n"
+                question.getText() + " Newest " + question.getText() + "Questions - Stack Overflow" + question.getText()
         );
-        
+        /*
         showCodeSite2.setText(
                 question.getText() + "Development Stack Exchange"
                 + "\n"
                 + "\n");
+        */
+        showCodeSite2.setText(
+                question.getText() + question.getText() + " An array is an ordered data structure consisting of a collection of elements ");
+         
+/*
+        showCodeSite2.setText(searchStEx.getText()
+                + "An array is an ordered data structure consisting of a collection"
+                + "of elements ( values or variables), each identified by one "
+                + "\n"
+                + "(single dimensional array or vector) or ...");
+        */
+        showCodeSite3.setText("stackoverflow.com/questions/tagged/arrays");
         
-        showCodeSite3.setText(
-                question.getText() + question.getText() + " when the story continues via progeny");
+        
+        
+        
+        sh21.setText("javascript - Appending to " + question.getText() + "- Stack Overflow");
+        sh22.setText("How do I append to an array in JavaScript? ... Use the push() function to append to an array:");
+        sh23.setText("stackoverflow.com/questions/351409/appending-to-array");
 
     }//GEN-LAST:event_searchStExActionPerformed
 
@@ -1008,6 +1047,10 @@ public class appOffline extends javax.swing.JFrame {
                 + "    }\n"
                 + "} " + listJava.getSelectedValue().toString());
     }//GEN-LAST:event_listJavaMouseClicked
+
+    private void siteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siteActionPerformed
+
+    }//GEN-LAST:event_siteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1106,6 +1149,9 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JTextField searchPython;
     private javax.swing.JButton searchStEx;
     private javax.swing.JTextField searchVB;
+    private javax.swing.JLabel sh21;
+    private javax.swing.JLabel sh22;
+    private javax.swing.JLabel sh23;
     private javax.swing.JTextArea showCode;
     private javax.swing.JLabel showCodeSite1;
     private javax.swing.JLabel showCodeSite2;
