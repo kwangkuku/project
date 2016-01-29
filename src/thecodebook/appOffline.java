@@ -70,6 +70,7 @@ public class appOffline extends javax.swing.JFrame {
         showCode = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         listJava = new javax.swing.JList<>();
+        copy = new javax.swing.JButton();
         tabCsh = new javax.swing.JPanel();
         csh1 = new javax.swing.JLabel();
         csh2 = new javax.swing.JLabel();
@@ -131,8 +132,12 @@ public class appOffline extends javax.swing.JFrame {
         userName2 = new javax.swing.JLabel();
         rating2 = new javax.swing.JLabel();
         rating1 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        showResult = new javax.swing.JTextArea();
+        showResult1 = new javax.swing.JLabel();
+        showResult2 = new javax.swing.JLabel();
+        showResult3 = new javax.swing.JLabel();
+        showResult4 = new javax.swing.JLabel();
+        showResult5 = new javax.swing.JLabel();
+        showResult6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         update = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -201,6 +206,14 @@ public class appOffline extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(listJava);
 
+        copy.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
+        copy.setText("Copy");
+        copy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tabJavaLayout = new javax.swing.GroupLayout(tabJava);
         tabJava.setLayout(tabJavaLayout);
         tabJavaLayout.setHorizontalGroup(
@@ -213,17 +226,28 @@ public class appOffline extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnSJava, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane6))
-                .addGap(27, 27, 27)
-                .addComponent(scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE))
+                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabJavaLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabJavaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(copy)
+                        .addContainerGap())))
         );
         tabJavaLayout.setVerticalGroup(
             tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabJavaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchJava, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSJava, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabJavaLayout.createSequentialGroup()
+                        .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchJava, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSJava, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabJavaLayout.createSequentialGroup()
+                        .addComponent(copy)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(tabJavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
                     .addComponent(jScrollPane6))
@@ -428,30 +452,31 @@ public class appOffline extends javax.swing.JFrame {
                                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(tabVBLayout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE))))))
         );
         tabVBLayout.setVerticalGroup(
             tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabVBLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchVB, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSVB))
-                .addGap(33, 33, 33)
                 .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabVBLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tabVBLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchVB, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSVB))
+                        .addGap(33, 33, 33)
                         .addComponent(vb1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
                         .addComponent(vb2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19)
                         .addComponent(vb3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tabVBLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(tabVBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -602,6 +627,7 @@ public class appOffline extends javax.swing.JFrame {
         });
 
         resultTitle1.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+        resultTitle1.setForeground(new java.awt.Color(0, 0, 153));
         resultTitle1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 resultTitle1MouseClicked(evt);
@@ -611,16 +637,32 @@ public class appOffline extends javax.swing.JFrame {
         userName1.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
         resultTitle2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
+        resultTitle2.setForeground(new java.awt.Color(0, 0, 153));
 
         userName2.setFont(new java.awt.Font("Aharoni", 0, 16)); // NOI18N
 
-        rating2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st35.png"))); // NOI18N
+        rating2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
 
         rating1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
 
-        showResult.setColumns(20);
-        showResult.setRows(5);
-        jScrollPane5.setViewportView(showResult);
+        showResult1.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showResult1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        showResult2.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showResult2.setForeground(new java.awt.Color(0, 0, 153));
+        showResult2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        showResult3.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showResult3.setForeground(new java.awt.Color(0, 102, 0));
+        showResult3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        showResult4.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+
+        showResult5.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showResult5.setForeground(new java.awt.Color(0, 0, 153));
+
+        showResult6.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
+        showResult6.setForeground(new java.awt.Color(0, 102, 0));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -631,26 +673,36 @@ public class appOffline extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                                    .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(84, 84, 84)
+                                .addComponent(jLabel20)
+                                .addGap(18, 18, 18)
+                                .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSearchCodeUser))
+                            .addComponent(jLabel19))
+                        .addGap(346, 346, 346))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel20)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearchCodeUser))
-                    .addComponent(jLabel19)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(346, 346, 346))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(showResult6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                            .addComponent(showResult5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(showResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(showResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(showResult1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(showResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,19 +723,25 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(rating1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(showResult1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showResult2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showResult3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(showResult4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showResult5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showResult6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("  Share Code  ", jPanel5);
+        jTabbedPane1.addTab("  Shared Code  ", jPanel5);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -870,59 +928,30 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
     private void resultTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultTitle1MouseClicked
-        showResult.setText(resultTitle1.getText()
-                + "\n"
-                + "___________________________________________________________________________________________________________________________"
-                + "\n"
-                + "\n"
-                + "\n"
-                + " class ArrayDemo {\n"
-                + "    public static void main(String[] args) {\n"
-                + "        // declares an array of integers\n"
-                + "        int[] anArray;\n"
-                + "\n"
-                + "        // allocates memory for 10 integers\n"
-                + "        anArray = new int[10];\n"
-                + "           \n"
-                + "        // initialize first element\n"
-                + "        anArray[0] = 100;\n"
-                + "        // initialize second element\n"
-                + "        anArray[1] = 200;\n"
-                + "        // and so forth\n"
-                + "        anArray[2] = 300;\n"
-                + "        anArray[3] = 400;\n"
-                + "        anArray[4] = 500;\n"
-                + "        anArray[5] = 600;\n"
-                + "        anArray[6] = 700;\n"
-                + "        anArray[7] = 800;\n"
-                + "        anArray[8] = 900;\n"
-                + "        anArray[9] = 1000;\n"
-                + "\n"
-                + "        System.out.println(\"Element at index 0: \"\n"
-                + "                           + anArray[0]);\n"
-                + "        System.out.println(\"Element at index 1: \"\n"
-                + "                           + anArray[1]);\n"
-                + "        System.out.println(\"Element at index 2: \"\n"
-                + "                           + anArray[2]);\n"
-                + "        System.out.println(\"Element at index 3: \"\n"
-                + "                           + anArray[3]);\n"
-                + "        System.out.println(\"Element at index 4: \"\n"
-                + "                           + anArray[4]);\n"
-                + "        System.out.println(\"Element at index 5: \"\n"
-                + "                           + anArray[5]);\n"
-                + "        System.out.println(\"Element at index 6: \"\n"
-                + "                           + anArray[6]);\n"
-                + "        System.out.println(\"Element at index 7: \"\n"
-                + "                           + anArray[7]);\n"
-                + "        System.out.println(\"Element at index 8: \"\n"
-                + "                           + anArray[8]);\n"
-                + "        System.out.println(\"Element at index 9: \"\n"
-                + "                           + anArray[9]);\n"
-                + "\n"
-                + "} "
+        showResult1.setText(resultTitle1.getText()
+                + "Code Examples (Java)  by. Eiji"
         );
 
+        showResult2.setText(resultTitle1.getText()
+                + "the array was just generated. What is going on? Why is a sorted array "
+        );
 
+        showResult3.setText(resultTitle1.getText()
+                + "http://stackoverflow.com/search?q=array"
+        );
+
+        //next
+        showResult4.setText(resultTitle1.getText()
+                + "Create ArrayList from array"
+        );
+
+        showResult5.setText(resultTitle1.getText()
+                + "convert this array into an object of the ArrayList class. ArrayList<Element> arraylist = ???;  "
+        );
+        
+        showResult6.setText(resultTitle1.getText()
+                + "http://stackoverflow.com/search?q=array"
+        );
     }//GEN-LAST:event_resultTitle1MouseClicked
 
     private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
@@ -935,22 +964,19 @@ public class appOffline extends javax.swing.JFrame {
                 question.getText() + "Development Stack Exchange"
                 + "\n"
                 + "\n");
-        */
+         */
         showCodeSite2.setText(
                 question.getText() + question.getText() + " An array is an ordered data structure consisting of a collection of elements ");
-         
-/*
+
+        /*
         showCodeSite2.setText(searchStEx.getText()
                 + "An array is an ordered data structure consisting of a collection"
                 + "of elements ( values or variables), each identified by one "
                 + "\n"
                 + "(single dimensional array or vector) or ...");
-        */
+         */
         showCodeSite3.setText("stackoverflow.com/questions/tagged/arrays");
-        
-        
-        
-        
+
         sh21.setText("javascript - Appending to " + question.getText() + "- Stack Overflow");
         sh22.setText("How do I append to an array in JavaScript? ... Use the push() function to append to an array:");
         sh23.setText("stackoverflow.com/questions/351409/appending-to-array");
@@ -1052,6 +1078,10 @@ public class appOffline extends javax.swing.JFrame {
 
     }//GEN-LAST:event_siteActionPerformed
 
+    private void copyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_copyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1094,6 +1124,7 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JButton btnSVB;
     private javax.swing.JButton btnSearchCodeUser;
     private javax.swing.JButton button;
+    private javax.swing.JButton copy;
     private javax.swing.JLabel csh1;
     private javax.swing.JLabel csh2;
     private javax.swing.JLabel csh3;
@@ -1124,7 +1155,6 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea2;
@@ -1156,7 +1186,12 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JLabel showCodeSite1;
     private javax.swing.JLabel showCodeSite2;
     private javax.swing.JLabel showCodeSite3;
-    private javax.swing.JTextArea showResult;
+    private javax.swing.JLabel showResult1;
+    private javax.swing.JLabel showResult2;
+    private javax.swing.JLabel showResult3;
+    private javax.swing.JLabel showResult4;
+    private javax.swing.JLabel showResult5;
+    private javax.swing.JLabel showResult6;
     private javax.swing.JComboBox<String> site;
     private javax.swing.JPanel tabCsh;
     private javax.swing.JPanel tabJava;
