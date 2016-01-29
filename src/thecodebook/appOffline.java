@@ -7,6 +7,7 @@ package thecodebook;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,26 @@ public class appOffline extends javax.swing.JFrame {
         list.add("Shape");
         list.add("add Audio");
         list.add("How to use jButton");
+        list.add("How to use jTextField");
+        list.add("How to use jPasswordField");
+        list.add("How to use jTextArea");
+        list.add("How to use jRadioButton");
+        list.add("How to use jRadioGroup");
+        list.add("How to use jCheckBox");
+        list.add("How to use jCombobox");
+        list.add("How to use jTable");
+        list.add("How to use jSlider");
+        list.add("Graphic User Interface (GUI)");
+        list.add("jFileChooser");
+        list.add("jMenuBar");
+        list.add("XML Parsers");
+        list.add("JSON");
+        list.add("Print Square");
+        list.add("Birthday Problem");
+        list.add("Enum demo");
+        list.add("Copy file");
+        list.add("Collection framework");
+        list.add("Fetch URL");
         DefaultListModel<String> model = new DefaultListModel<String>();
         for (String s : list) {
             model.addElement(s);
@@ -132,19 +153,7 @@ public class appOffline extends javax.swing.JFrame {
         userName2 = new javax.swing.JLabel();
         rating2 = new javax.swing.JLabel();
         rating1 = new javax.swing.JLabel();
-        showResult1 = new javax.swing.JLabel();
-        showResult2 = new javax.swing.JLabel();
-        showResult3 = new javax.swing.JLabel();
-        showResult4 = new javax.swing.JLabel();
-        showResult5 = new javax.swing.JLabel();
-        showResult6 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        update = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        button = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -645,25 +654,6 @@ public class appOffline extends javax.swing.JFrame {
 
         rating1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st25.png"))); // NOI18N
 
-        showResult1.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-        showResult1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        showResult2.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-        showResult2.setForeground(new java.awt.Color(0, 0, 153));
-        showResult2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        showResult3.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-        showResult3.setForeground(new java.awt.Color(0, 102, 0));
-        showResult3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        showResult4.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-
-        showResult5.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-        showResult5.setForeground(new java.awt.Color(0, 0, 153));
-
-        showResult6.setFont(new java.awt.Font("Aharoni", 2, 16)); // NOI18N
-        showResult6.setForeground(new java.awt.Color(0, 102, 0));
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -673,36 +663,25 @@ public class appOffline extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                                    .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(jLabel20)
-                                .addGap(18, 18, 18)
-                                .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSearchCodeUser))
-                            .addComponent(jLabel19))
-                        .addGap(346, 346, 346))
+                            .addComponent(resultTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userName2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(userName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rating2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rating1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(showResult6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                            .addComponent(showResult5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showResult1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchCodeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchCodeUser))
+                    .addComponent(jLabel19))
+                .addGap(346, 346, 346))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -726,89 +705,18 @@ public class appOffline extends javax.swing.JFrame {
                     .addComponent(resultTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userName2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rating2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(showResult1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(showResult2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(showResult3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(showResult4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(showResult5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(showResult6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Shared Code  ", jPanel5);
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-
-        update.setBackground(new java.awt.Color(255, 0, 0));
-        update.setFont(new java.awt.Font("Aharoni", 1, 24)); // NOI18N
-        update.setText("  UPDATE  ");
-        update.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateMouseClicked(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        jTextField1.setText("jTextField1");
-
-        button.setText("jButton1");
-        button.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Aharoni", 1, 18)); // NOI18N
+        jButton1.setText(" Update ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(377, 377, 377)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 232, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(button)))
-                .addGap(143, 143, 143))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(update)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
-        );
-
-        jTabbedPane1.addTab("  Update  ", jPanel8);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -817,7 +725,9 @@ public class appOffline extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -826,8 +736,10 @@ public class appOffline extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -928,30 +840,7 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
     private void resultTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultTitle1MouseClicked
-        showResult1.setText(resultTitle1.getText()
-                + "Code Examples (Java)  by. Eiji"
-        );
-
-        showResult2.setText(resultTitle1.getText()
-                + "the array was just generated. What is going on? Why is a sorted array "
-        );
-
-        showResult3.setText(resultTitle1.getText()
-                + "http://stackoverflow.com/search?q=array"
-        );
-
-        //next
-        showResult4.setText(resultTitle1.getText()
-                + "Create ArrayList from array"
-        );
-
-        showResult5.setText(resultTitle1.getText()
-                + "convert this array into an object of the ArrayList class. ArrayList<Element> arraylist = ???;  "
-        );
-        
-        showResult6.setText(resultTitle1.getText()
-                + "http://stackoverflow.com/search?q=array"
-        );
+       
     }//GEN-LAST:event_resultTitle1MouseClicked
 
     private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
@@ -1008,25 +897,6 @@ public class appOffline extends javax.swing.JFrame {
 
     }//GEN-LAST:event_showCodeSite1MouseClicked
 
-    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
-        //popupCheckForUpdate
-
-    }//GEN-LAST:event_updateMouseClicked
-
-    private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
-        //test code
-        /*
-        DefaultListModel<String> model = new DefaultListModel<String>();
-       for (Object s : list){
-           if (((String) s).contains(this.jTextField1.getText().toString())){
-               model.addElement(s.toString());
-           }
-           
-       }
-       this.jList1.setModel(model);
-         */
-    }//GEN-LAST:event_buttonActionPerformed
-
     private void listJavaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listJavaMouseClicked
         showCode.setText("class ArrayDemo {\n"
                 + "    public static void main(String[] args) {\n"
@@ -1082,6 +952,10 @@ public class appOffline extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_copyActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JOptionPane.showMessageDialog(this, "Update complete");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1123,13 +997,13 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JButton btnSPython;
     private javax.swing.JButton btnSVB;
     private javax.swing.JButton btnSearchCodeUser;
-    private javax.swing.JButton button;
     private javax.swing.JButton copy;
     private javax.swing.JLabel csh1;
     private javax.swing.JLabel csh2;
     private javax.swing.JLabel csh3;
     private javax.swing.JLabel csh4;
     private javax.swing.JLabel csh5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1141,17 +1015,13 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1160,7 +1030,6 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JList<String> listJava;
     private javax.swing.JLabel pyt1;
     private javax.swing.JLabel pyt2;
@@ -1186,18 +1055,11 @@ public class appOffline extends javax.swing.JFrame {
     private javax.swing.JLabel showCodeSite1;
     private javax.swing.JLabel showCodeSite2;
     private javax.swing.JLabel showCodeSite3;
-    private javax.swing.JLabel showResult1;
-    private javax.swing.JLabel showResult2;
-    private javax.swing.JLabel showResult3;
-    private javax.swing.JLabel showResult4;
-    private javax.swing.JLabel showResult5;
-    private javax.swing.JLabel showResult6;
     private javax.swing.JComboBox<String> site;
     private javax.swing.JPanel tabCsh;
     private javax.swing.JPanel tabJava;
     private javax.swing.JPanel tabPy;
     private javax.swing.JPanel tabVB;
-    private javax.swing.JButton update;
     private javax.swing.JLabel userName1;
     private javax.swing.JLabel userName2;
     private javax.swing.JLabel vb1;
