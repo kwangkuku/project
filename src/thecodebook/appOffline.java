@@ -874,7 +874,6 @@ public class appOffline extends javax.swing.JFrame {
         userName2.setText("by.Kwang");
         userName3.setText("by.pop");
         userName4.setText("by.Kwanrudee");
-        
 
         //  String st23 = "/images/st25.png";
         //  rating1.setText(st25);
@@ -886,7 +885,7 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchCodeUserActionPerformed
 
     private void resultTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultTitle1MouseClicked
-       
+
     }//GEN-LAST:event_resultTitle1MouseClicked
 
     private void searchStExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStExActionPerformed
@@ -999,7 +998,15 @@ public class appOffline extends javax.swing.JFrame {
     }//GEN-LAST:event_copyActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this, "Update complete");
+        int selectedOption = JOptionPane.showConfirmDialog(null,
+                "Do you want to update it?",
+                "Update",
+                JOptionPane.YES_NO_OPTION);
+        if (selectedOption == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Update complete");
+        }
+
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
