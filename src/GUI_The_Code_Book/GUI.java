@@ -472,7 +472,7 @@ public class GUI extends javax.swing.JFrame {
         stackEx_TextField.setEditable(false);
         jScrollPane5.setViewportView(stackEx_TextField);
 
-        page1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1160, 510));
+        page1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 90, 1160, 510));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI_The_Code_Book/img/se-logo.png"))); // NOI18N
         page1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 230, 60));
@@ -489,6 +489,11 @@ public class GUI extends javax.swing.JFrame {
 
         search_CB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         search_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "stackoverflow", "webapps", "gamedev", "programmers", "webmaster" }));
+        search_CB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_CBActionPerformed(evt);
+            }
+        });
         page1.add(search_CB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 31, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -753,6 +758,11 @@ public class GUI extends javax.swing.JFrame {
         
       
     }//GEN-LAST:event_cb_Size_javaActionPerformed
+
+    private void search_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_CBActionPerformed
+       
+        
+    }//GEN-LAST:event_search_CBActionPerformed
 
     /**
      * @param args the command line arguments

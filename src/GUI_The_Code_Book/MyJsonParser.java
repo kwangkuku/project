@@ -30,7 +30,7 @@ public class MyJsonParser {
          JsonReader reader = null;
         try {
             fstream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/jsonfile_CSharp.json");
-            
+           
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
 
