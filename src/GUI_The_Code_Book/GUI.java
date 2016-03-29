@@ -211,7 +211,6 @@ public class GUI extends javax.swing.JFrame {
         vb_panel = new javax.swing.JPanel();
         vb_Button = new javax.swing.JButton();
         vb_copy_bt = new javax.swing.JButton();
-        jPanelSharedCode = new javax.swing.JPanel();
         jPanelStackEx = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
@@ -226,6 +225,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         page2 = new javax.swing.JPanel();
+        jPanelSharedCode = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -450,7 +450,6 @@ public class GUI extends javax.swing.JFrame {
         vb_tab.add(vb_copy_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, -1, 28));
 
         tab.addTab("    VB   ", vb_tab);
-        tab.addTab("Shared Code", jPanelSharedCode);
 
         jPanelStackEx.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -472,7 +471,7 @@ public class GUI extends javax.swing.JFrame {
         stackEx_TextField.setEditable(false);
         jScrollPane5.setViewportView(stackEx_TextField);
 
-        page1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 90, 1160, 510));
+        page1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1160, 510));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI_The_Code_Book/img/se-logo.png"))); // NOI18N
         page1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 230, 60));
@@ -512,6 +511,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelStackEx.add(stackEx_tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1180, 620));
 
         tab.addTab("Stack Exchange", jPanelStackEx);
+        tab.addTab("Shared Code", jPanelSharedCode);
 
         getContentPane().add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1200, 660));
 
@@ -571,7 +571,7 @@ public class GUI extends javax.swing.JFrame {
         ArrayList<URLlist> listStackEx = ParserAPIStackEx.getParserAPIStackEx().getStackEx(word, web);
         this.stackEx_TextField.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
         StringBuilder content = new StringBuilder();
-        content.append("<html></body>");
+        content.append("<html><body>");
         for (int i = 0; i < listStackEx.size(); i++) {
             content.append("<br>View Count :" + listStackEx.get(i).getView_content() + "<br>");
             content.append("Answer Count :" + listStackEx.get(i).getAnswer_count() + "<br>");

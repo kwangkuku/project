@@ -30,9 +30,9 @@ public class ParserAPIStackEx {
 
     public static ArrayList<URLlist> urlList;
 
-    private ParserAPIStackEx() {
+    //private ParserAPIStackEx() {
 
-    }
+    //}
 
     public static ParserAPIStackEx getParserAPIStackEx() {
         if (obj == null) {
@@ -82,7 +82,10 @@ public class ParserAPIStackEx {
             reader.close();
             JsonArray array = jsonObject.getJsonArray("items");
             for (JsonObject result : array.getValuesAs(JsonObject.class)) {
-                urlList.add(new URLlist(result.getInt("view_count"), result.getInt("answer_count"), result.getString("title"), result.getString("link")));
+                urlList.add(new URLlist(result.getInt("view_count"), 
+                                        result.getInt("answer_count"), 
+                                        result.getString("title"), 
+                                        result.getString("link")));
             }
         } catch (Exception e) {
             e.printStackTrace();

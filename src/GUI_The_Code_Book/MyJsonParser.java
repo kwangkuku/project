@@ -41,7 +41,10 @@ public class MyJsonParser {
                 reader.close();
                 
                 //Start reading value
-                codelist.add(new CodeList(Integer.parseInt(jsonObject.getString("ID")),jsonObject.getString("language"),jsonObject.getString("title"),jsonObject.getString("content")));
+                codelist.add(new CodeList(Integer.parseInt(jsonObject.getString("ID")),
+                        jsonObject.getString("language"),
+                        jsonObject.getString("title"),
+                        jsonObject.getString("content")));
             }
         }catch(Exception ex){ex.printStackTrace();}     
     }

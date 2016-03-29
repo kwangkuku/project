@@ -1,16 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package GUI_The_Code_Book;
 
-public class CodeList {
+class SharedCodeList {
     private int id;
-    private String language;
     private String title;
     private String content;
     
-    public CodeList(int id,String language,String title,String content){
-        this.setId(id);
-        this.setLanguage(language);
-        this.setTitle(title);
-        this.setContent(content);
+    public SharedCodeList(int id, String title, String content){
+    this.id = id;
+    this.title = title;
+    this.content = content;
     }
 
     /**
@@ -28,20 +31,6 @@ public class CodeList {
     }
 
     /**
-     * @return the language
-     */
-    public String getLanguage() {
-        return language;
-    }
-
-    /**
-     * @param language the language to set
-     */
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    /**
      * @return the title
      */
     public String getTitle() {
@@ -53,7 +42,6 @@ public class CodeList {
      */
     public void setTitle(String title) {
         this.title = title;
-        
     }
 
     /**
