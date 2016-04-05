@@ -6,8 +6,20 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import javax.json.JsonReader;
-import jdk.nashorn.internal.parser.JSONParser;
-    
+//import jdk.nashorn.internal.parser.JSONParser;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.json.Json;
+import javax.json.JsonObject;
+ import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;   
 
 /**
  *
@@ -23,29 +35,22 @@ public class ParserJsonSharedCode {
             if(obj == null)
             {
             obj = new ParserJsonSharedCode();
-          //  obj.ParserProcess();
+            obj.ParserProcess();
             }
           return obj;  
         
     }
         
-    public void ParserProcess() {
+    public void ParserProcess()  {
     sharedList = new ArrayList<SharedCodeList>();
-    FileInputStream file = null;
-         JsonReader reader = null;
+   // FileInputStream file = null;
+        JsonReader reader = null;
        JSONParser parser = new JSONParser();
-         
-     try {
-         file = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/sharedcode.json");
-         BufferedReader br = new BufferedReader(new InputStreamReader(file));
-         String readline; 
-        
-  
-     } catch (Exception ex) {
-        ex.printStackTrace();
-        }
-    }}
-
+       
+     
+     
+    }
+}
  
     
     

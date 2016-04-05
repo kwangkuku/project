@@ -606,7 +606,10 @@ public class GUI extends javax.swing.JFrame {
         stackEx_tab.setSelectedIndex(0);
         tw.dispose();
         page2.removeAll();
-        back.setVisible(false);
+        page2.removeAll();
+        
+        back.setVisible(true);
+        back.removeAll();
     }//GEN-LAST:event_backActionPerformed
 
     private void java_copy_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_java_copy_btActionPerformed
