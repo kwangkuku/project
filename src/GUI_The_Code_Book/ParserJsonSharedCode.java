@@ -43,9 +43,42 @@ public class ParserJsonSharedCode {
         
     public void ParserProcess()  {
     sharedList = new ArrayList<SharedCodeList>();
-   // FileInputStream file = null;
-        JsonReader reader = null;
+       JsonReader reader = null;
        JSONParser parser = new JSONParser();
+       FileInputStream fileStream = null;
+       
+     try {
+         fileStream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/sharedcode.json");
+         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
+         Object obj = parser.parse(br);
+         if(obj instanceof JSONArray)
+         {
+         JSONArray array = (JSONArray)obj;
+          for(int i =0;i<array.size();i++)
+          {
+          JSONObject jsonObj = (JSONObject) array.get(i);
+          String id = jsonObj.get("id").toString();
+                      String title = jsonObj.get("title").toString();
+                      String content = jsonObj.get("content").toString();
+                      String created = "";
+                      String updated = "";
+                      if(jsonObj.get("created_at") != null)
+                            created = jsonObj.get("created_at").toString();
+                      if(jsonObj.get("updated_at") != null)
+                            updated = jsonObj.get("updated_at").toString();
+                      System.out.println("ID: "+id);
+                      System.out.println("TITLE: "+title);
+                      System.out.println("Content: "+content);
+                      System.out.println("Created: "+created);
+                     System.out.println("Updated: "+updated);
+          }
+         }
+         
+         
+         
+     } catch (Exception ex) {
+         Logger.getLogger(ParserJsonSharedCode.class.getName()).log(Level.SEVERE, null, ex);
+     }
        
      
      
