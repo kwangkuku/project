@@ -226,6 +226,13 @@ public class GUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         page2 = new javax.swing.JPanel();
         jPanelSharedCode = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -511,6 +518,30 @@ public class GUI extends javax.swing.JFrame {
         jPanelStackEx.add(stackEx_tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1180, 620));
 
         tab.addTab("Stack Exchange", jPanelStackEx);
+
+        jPanelSharedCode.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        jLabel4.setText("SharedCode");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 30));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("SearchTitle :");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Search");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, -1, -1));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 250, 30));
+
+        jScrollPane6.setViewportView(jEditorPane1);
+
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1190, 520));
+
+        jPanelSharedCode.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         tab.addTab("Shared Code", jPanelSharedCode);
 
         getContentPane().add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1200, 660));
@@ -813,10 +844,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField csh_jTextField;
     private javax.swing.JPanel csh_panel;
     private javax.swing.JPanel csh_tab;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelSharedCode;
     private javax.swing.JPanel jPanelStackEx;
     private javax.swing.JScrollPane jScrollPane1;
@@ -824,6 +860,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton java_Button;
     private javax.swing.JButton java_copy_bt;
     private javax.swing.JList<String> java_jList;

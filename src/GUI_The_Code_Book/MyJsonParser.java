@@ -29,8 +29,8 @@ public class MyJsonParser {
         FileInputStream fstream = null;
          JsonReader reader = null;
         try {
-            fstream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/TheCodeBook V 0.1/jsonfile_CSharp.json");
-           //D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/TheCodeBook V 0.1/jsonfile_CSharp.json
+            fstream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/TheCodeBook V 0.1/jsonfilePython.json");
+           //D:\การเรียน\project I\Project\GUI TheCodeBook\TheCodeBook1\TheCodeBook V 0.1
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
 
