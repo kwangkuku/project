@@ -7,13 +7,24 @@ package GUI_The_Code_Book;
 
 class SharedCodeList {
     private int id;
+    private String sid;
     private String title;
     private String content;
+    private String update;
+    private String created;
     
     public SharedCodeList(int id, String title, String content){
     this.id = id;
     this.title = title;
     this.content = content;
+    }
+
+    SharedCodeList(String id, String title, String content,String update,String created) {
+    this.sid = id;
+    this.title = title;
+    this.content = content; 
+    this.created = created;
+    this.update = update;
     }
 
     /**

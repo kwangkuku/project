@@ -35,15 +35,15 @@ public class ParserJsonSharedCode {
             if(obj == null)
             {
             obj = new ParserJsonSharedCode();
-            obj.ParserProcess();
+            obj.getSharedCode();
             }
           return obj;  
         
     }
         
-    public void ParserProcess()  {
+    public void getSharedCode()  {
     sharedList = new ArrayList<SharedCodeList>();
-       JsonReader reader = null;
+       
        JSONParser parser = new JSONParser();
        FileInputStream fileStream = null;
        
@@ -58,19 +58,20 @@ public class ParserJsonSharedCode {
           {
           JSONObject jsonObj = (JSONObject) array.get(i);
           String id = jsonObj.get("id").toString();
-                      String title = jsonObj.get("title").toString();
-                      String content = jsonObj.get("content").toString();
-                      String created = "";
-                      String updated = "";
-                      if(jsonObj.get("created_at") != null)
-                            created = jsonObj.get("created_at").toString();
-                      if(jsonObj.get("updated_at") != null)
-                            updated = jsonObj.get("updated_at").toString();
-                      System.out.println("ID: "+id);
-                      System.out.println("TITLE: "+title);
-                      System.out.println("Content: "+content);
-                      System.out.println("Created: "+created);
-                     System.out.println("Updated: "+updated);
+          String title = jsonObj.get("title").toString();
+          String content = jsonObj.get("content").toString();
+          String created = "";
+          String updated = "";
+             if(jsonObj.get("created_at") != null)
+                 created = jsonObj.get("created_at").toString();
+             if(jsonObj.get("updated_at") != null)
+                 updated = jsonObj.get("updated_at").toString();
+                   sharedList.add(new SharedCodeList(id,title,content,updated,created));
+                      //System.out.println("ID: "+id);
+                     // System.out.println("TITLE: "+title);
+                      //System.out.println("Content: "+content);
+                      //System.out.println("Created: "+created);
+                     //System.out.println("Updated: "+updated);
           }
          }
          

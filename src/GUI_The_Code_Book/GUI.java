@@ -197,6 +197,7 @@ public class GUI extends javax.swing.JFrame {
         python_panel = new javax.swing.JPanel();
         python_Button = new javax.swing.JButton();
         python_copy_bt = new javax.swing.JButton();
+        cb_sizePython = new javax.swing.JComboBox<>();
         csh_tab = new javax.swing.JPanel();
         csh_jTextField = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -204,6 +205,7 @@ public class GUI extends javax.swing.JFrame {
         csh_panel = new javax.swing.JPanel();
         csh_Button = new javax.swing.JButton();
         csh_copy_bt = new javax.swing.JButton();
+        cb_sizeCSharp = new javax.swing.JComboBox<>();
         vb_tab = new javax.swing.JPanel();
         vb_jTextField = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -211,6 +213,7 @@ public class GUI extends javax.swing.JFrame {
         vb_panel = new javax.swing.JPanel();
         vb_Button = new javax.swing.JButton();
         vb_copy_bt = new javax.swing.JButton();
+        cb_sizeVB = new javax.swing.JComboBox<>();
         jPanelStackEx = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
@@ -229,10 +232,10 @@ public class GUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        bt_SearchShared = new javax.swing.JButton();
+        TF_searchShared = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
+        area_SharedCode = new javax.swing.JEditorPane();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -329,7 +332,7 @@ public class GUI extends javax.swing.JFrame {
                 cb_Size_javaActionPerformed(evt);
             }
         });
-        java_tab.add(cb_Size_java, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, -1, -1));
+        java_tab.add(cb_Size_java, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 10, -1, -1));
 
         tab.addTab("  JAVA ", java_tab);
 
@@ -372,6 +375,14 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         python_tab.add(python_copy_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, -1, 28));
+
+        cb_sizePython.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "12", "14", "16", "18", "20", "22", "24", "26", "30", "32", "36" }));
+        cb_sizePython.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_sizePythonActionPerformed(evt);
+            }
+        });
+        python_tab.add(cb_sizePython, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));
 
         tab.addTab("   PYTHON  ", python_tab);
 
@@ -416,6 +427,14 @@ public class GUI extends javax.swing.JFrame {
         });
         csh_tab.add(csh_copy_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, -1, 28));
 
+        cb_sizeCSharp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "12", "14", "16", "18", "20", "22", "24", "26", "30", "32", "36" }));
+        cb_sizeCSharp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_sizeCSharpActionPerformed(evt);
+            }
+        });
+        csh_tab.add(cb_sizeCSharp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));
+
         tab.addTab("   C#  ", csh_tab);
 
         vb_tab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -455,6 +474,14 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         vb_tab.add(vb_copy_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, -1, 28));
+
+        cb_sizeVB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "12", "14", "16", "18", "20", "22", "24", "26", "30", "32", "36" }));
+        cb_sizeVB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_sizeVBActionPerformed(evt);
+            }
+        });
+        vb_tab.add(cb_sizeVB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));
 
         tab.addTab("    VB   ", vb_tab);
 
@@ -531,12 +558,17 @@ public class GUI extends javax.swing.JFrame {
         jLabel5.setText("SearchTitle :");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Search");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, -1, -1));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 250, 30));
+        bt_SearchShared.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_SearchShared.setText("Search");
+        bt_SearchShared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_SearchSharedActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bt_SearchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, -1, -1));
+        jPanel2.add(TF_searchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 250, 30));
 
-        jScrollPane6.setViewportView(jEditorPane1);
+        jScrollPane6.setViewportView(area_SharedCode);
 
         jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1190, 520));
 
@@ -637,7 +669,7 @@ public class GUI extends javax.swing.JFrame {
         stackEx_tab.setSelectedIndex(0);
         tw.dispose();
         page2.removeAll();
-        page2.removeAll();
+        //page2.removeAll();
         
         back.setVisible(true);
         back.removeAll();
@@ -798,6 +830,35 @@ public class GUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_search_CBActionPerformed
 
+    private void bt_SearchSharedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_SearchSharedActionPerformed
+        String word = this.TF_searchShared.getText().toString();
+        ArrayList<SharedCodeList> sharedList =  ParserJsonSharedCode.getParserJsonSharedCode().sharedList;
+        this.area_SharedCode.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
+        StringBuilder content = new StringBuilder();
+        content.append("<html><body>");
+        for(int i=0;i<sharedList.size();i++){
+           String t = sharedList.get(i).getTitle();
+            content.append("<br>View Count :" + sharedList.get(i).getTitle() + "<br>"); 
+       }
+       
+        
+    }//GEN-LAST:event_bt_SearchSharedActionPerformed
+
+    private void cb_sizePythonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_sizePythonActionPerformed
+        Font font = new Font("Consolas", Font.PLAIN, Integer.parseInt(cb_sizePython.getSelectedItem().toString()));
+           textAreaPython.setFont(font);
+    }//GEN-LAST:event_cb_sizePythonActionPerformed
+
+    private void cb_sizeCSharpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_sizeCSharpActionPerformed
+       Font font = new Font("Consolas", Font.PLAIN, Integer.parseInt(cb_sizeCSharp.getSelectedItem().toString()));
+           textAreaCsh.setFont(font);
+    }//GEN-LAST:event_cb_sizeCSharpActionPerformed
+
+    private void cb_sizeVBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_sizeVBActionPerformed
+        Font font = new Font("Consolas",Font.PLAIN,Integer.parseInt(cb_sizeCSharp.getSelectedItem().toString()));
+         textAreaVB.setFont(font);
+    }//GEN-LAST:event_cb_sizeVBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -836,16 +897,20 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CloseButton;
     private javax.swing.JLabel Drage;
+    private javax.swing.JTextField TF_searchShared;
+    private javax.swing.JEditorPane area_SharedCode;
     public javax.swing.JButton back;
+    private javax.swing.JButton bt_SearchShared;
     private javax.swing.JComboBox<String> cb_Size_java;
+    private javax.swing.JComboBox<String> cb_sizeCSharp;
+    private javax.swing.JComboBox<String> cb_sizePython;
+    private javax.swing.JComboBox<String> cb_sizeVB;
     private javax.swing.JButton csh_Button;
     private javax.swing.JButton csh_copy_bt;
     private javax.swing.JList<String> csh_jList;
     private javax.swing.JTextField csh_jTextField;
     private javax.swing.JPanel csh_panel;
     private javax.swing.JPanel csh_tab;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -861,7 +926,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton java_Button;
     private javax.swing.JButton java_copy_bt;
     private javax.swing.JList<String> java_jList;
