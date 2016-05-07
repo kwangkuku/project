@@ -10,6 +10,7 @@ class SharedCodeList {
     private String sid;
     private String title;
     private String content;
+    private String type;
     private String update;
     private String created;
     
@@ -19,12 +20,16 @@ class SharedCodeList {
     this.content = content;
     }
 
-    SharedCodeList(String id, String title, String content,String update,String created) {
+    SharedCodeList(String id, String title, String content,String type,String update,String created) {
     this.sid = id;
     this.title = title;
     this.content = content; 
     this.created = created;
     this.update = update;
+    }
+
+    SharedCodeList(String id, String title, String content, String type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -67,6 +72,20 @@ class SharedCodeList {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(String type) {
+        this.type = type;
     }
     
 }

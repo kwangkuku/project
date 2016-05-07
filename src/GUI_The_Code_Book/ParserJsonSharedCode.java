@@ -41,14 +41,14 @@ public class ParserJsonSharedCode {
         
     }
         
-    public void getSharedCode()  {
+    public static void getSharedCode()  {
     sharedList = new ArrayList<SharedCodeList>();
        
        JSONParser parser = new JSONParser();
        FileInputStream fileStream = null;
        
      try {
-         fileStream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/sharedcode.json");
+         fileStream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/testWriteflie.json");
          BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
          Object obj = parser.parse(br);
          if(obj instanceof JSONArray)
@@ -60,18 +60,19 @@ public class ParserJsonSharedCode {
           String id = jsonObj.get("id").toString();
           String title = jsonObj.get("title").toString();
           String content = jsonObj.get("content").toString();
+          String type  = jsonObj.get("type").toString();
           String created = "";
           String updated = "";
              if(jsonObj.get("created_at") != null)
                  created = jsonObj.get("created_at").toString();
              if(jsonObj.get("updated_at") != null)
                  updated = jsonObj.get("updated_at").toString();
-                   sharedList.add(new SharedCodeList(id,title,content,updated,created));
-                      //System.out.println("ID: "+id);
-                     // System.out.println("TITLE: "+title);
-                      //System.out.println("Content: "+content);
-                      //System.out.println("Created: "+created);
-                     //System.out.println("Updated: "+updated);
+                   sharedList.add(new SharedCodeList(id,title,content,type,updated,created));
+                   //   System.out.println("ID: "+id);
+                   //  System.out.println("TITLE: "+title);
+                   //   System.out.println("Content: "+content);
+                    //  System.out.println("Created: "+created);
+                    // System.out.println("Updated: "+updated);
           }
          }
          
@@ -84,6 +85,7 @@ public class ParserJsonSharedCode {
      
      
     }
+    
 }
  
     

@@ -21,6 +21,7 @@ import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.HyperlinkEvent;
@@ -38,10 +39,10 @@ public class GUI extends javax.swing.JFrame {
     int xM;
     int yM;
     
-    private final ArrayList<String> listTitleJava = new ArrayList<>();
-    private final ArrayList<String> listTitlePython = new ArrayList<>();
-    private final ArrayList<String> listTitleCSharp = new ArrayList<>();
-    private final ArrayList<String> listTitleVB = new ArrayList<>();
+    private ArrayList<String> listTitleJava = new ArrayList<>();
+    private ArrayList<String> listTitlePython = new ArrayList<>();
+    private ArrayList<String> listTitleCSharp = new ArrayList<>();
+    private ArrayList<String> listTitleVB = new ArrayList<>();
     
     public RSyntaxTextArea textAreaJava;
     public RSyntaxTextArea textAreaCsh;
@@ -88,6 +89,7 @@ public class GUI extends javax.swing.JFrame {
         textAreaJava.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         textAreaJava.setCodeFoldingEnabled(true);
         textAreaJava.setText("");
+        textAreaJava.setEditable(false);
         
         System.out.println(textAreaJava.getFont());
         
@@ -95,16 +97,19 @@ public class GUI extends javax.swing.JFrame {
         textAreaCsh.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_CSHARP);
         textAreaCsh.setCodeFoldingEnabled(true);
         textAreaCsh.setText("");
+        textAreaCsh.setEnabled(false);
         
         textAreaPython = new RSyntaxTextArea(20, 60);
         textAreaPython.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_PYTHON);
         textAreaPython.setCodeFoldingEnabled(true);
         textAreaPython.setText("");
+        textAreaPython.setEnabled(false);
         
         textAreaVB= new RSyntaxTextArea(20, 60);
         textAreaVB.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_VISUAL_BASIC);
         textAreaVB.setCodeFoldingEnabled(true);
         textAreaVB.setText("");
+        textAreaVB.setEnabled(false);
 
         RTextScrollPane java = new RTextScrollPane(textAreaJava);
         RTextScrollPane csh = new RTextScrollPane(textAreaCsh);
@@ -136,7 +141,7 @@ public class GUI extends javax.swing.JFrame {
     public void getTitleToList(){
         ArrayList<CodeList> codelist = MyJsonParser.getMyJsonParser().codelist;
         for(int i=0 ; i<codelist.size();i++){
-            String l = codelist.get(i).getLanguage();
+            String l = codelist.get(i).getType();
             String t = codelist.get(i).getTitle();
             if(l.equals("java")){
                 listTitleJava.add(t);
@@ -162,7 +167,7 @@ public class GUI extends javax.swing.JFrame {
         String content = null;
         ArrayList<CodeList> codelist = MyJsonParser.getMyJsonParser().codelist;
         for(int i=0;i<codelist.size();i++){
-            if(codelist.get(i).getTitle().equals(title)&&codelist.get(i).getLanguage().equals(language)){
+            if(codelist.get(i).getTitle().equals(title)&&codelist.get(i).getType().equals(language)){
                 content = codelist.get(i).getContent();
             }
         }
@@ -178,6 +183,7 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         CloseButton = new javax.swing.JLabel();
         miniButton = new javax.swing.JLabel();
         Drage = new javax.swing.JLabel();
@@ -241,6 +247,17 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Update");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 80, 30));
 
         CloseButton.setText("        ");
         CloseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -556,7 +573,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("SearchTitle :");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         bt_SearchShared.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_SearchShared.setText("Search");
@@ -565,14 +582,14 @@ public class GUI extends javax.swing.JFrame {
                 bt_SearchSharedActionPerformed(evt);
             }
         });
-        jPanel2.add(bt_SearchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, -1, -1));
-        jPanel2.add(TF_searchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 250, 30));
+        jPanel2.add(bt_SearchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, -1));
+        jPanel2.add(TF_searchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 250, 30));
 
         jScrollPane6.setViewportView(area_SharedCode);
 
-        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1190, 520));
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1190, 520));
 
-        jPanelSharedCode.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanelSharedCode.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 610));
 
         tab.addTab("Shared Code", jPanelSharedCode);
 
@@ -855,9 +872,30 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_sizeCSharpActionPerformed
 
     private void cb_sizeVBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_sizeVBActionPerformed
-        Font font = new Font("Consolas",Font.PLAIN,Integer.parseInt(cb_sizeCSharp.getSelectedItem().toString()));
+        Font font = new Font("Consolas",Font.PLAIN,Integer.parseInt(cb_sizeVB.getSelectedItem().toString()));
          textAreaVB.setFont(font);
     }//GEN-LAST:event_cb_sizeVBActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedOption = JOptionPane.showConfirmDialog(null,
+                "Do you want to update it?",
+                "Update",
+                JOptionPane.YES_NO_OPTION);
+        if (selectedOption == JOptionPane.YES_OPTION) {
+            UpdateFile upfile = new UpdateFile();
+            upfile.createFile();
+            listTitleJava = new ArrayList<>();
+            listTitlePython = new ArrayList<>();
+            listTitleCSharp = new ArrayList<>();
+            listTitleVB = new ArrayList<>();
+            MyJsonParser.getMyJsonParser();
+            getTitleToList();
+            setListBox(listTitleJava,java_jList);
+            setListBox(listTitlePython,python_jList);
+            setListBox(listTitleCSharp,csh_jList);
+            setListBox(listTitleVB,vb_jList);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -911,6 +949,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField csh_jTextField;
     private javax.swing.JPanel csh_panel;
     private javax.swing.JPanel csh_tab;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

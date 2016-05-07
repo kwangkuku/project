@@ -1,48 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package GUI_The_Code_Book;
 
-public class CodeList {
-    private String id;
-    private String language;
+/**
+ *
+ * @author Administrator
+ */
+class NewCodeList {
+     private int id;
     private String title;
     private String content;
     private String type;
-    
-    public CodeList(String id,String title,String content,String type){
+
+    public NewCodeList(int id,String title,String content,String type){
         this.setId(id);
-        //this.setLanguage(language);
+        this.setType(type);
         this.setTitle(title);
         this.setContent(content);
-        this.setType(type);
     }
-
     /**
      * @return the id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
     /**
      * @return the language
      */
-    /*public String getLanguage() {
-        return language;
-    }*/
+    public String getType() {
+        return type;
+    }
 
     /**
      * @param language the language to set
      */
-   /* public void setLanguage(String language) {
-        this.language = language;
+    public void setType(String type) {
+        this.type = type;
     }
-*/
+
     /**
      * @return the title
      */
@@ -55,7 +61,6 @@ public class CodeList {
      */
     public void setTitle(String title) {
         this.title = title;
-        
     }
 
     /**
@@ -71,19 +76,7 @@ public class CodeList {
     public void setContent(String content) {
         this.content = content;
     }
-
-    /**
-     * @return the type
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * @param type the type to set
-     */
-    public void setType(String type) {
-        this.type = type;
-    }
     
+   
+
 }
