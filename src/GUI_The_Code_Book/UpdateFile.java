@@ -27,7 +27,7 @@ public class UpdateFile {
     public  void createFile(){
         FileOutputStream fs = null;
         try {
-            File file = new File("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/testWriteflie.json");
+            File file = new File("JsonFile/testWriteflie.json");
             fs = new FileOutputStream(file);
             OutputStreamWriter ow = new OutputStreamWriter(fs);
             BufferedWriter writer = new BufferedWriter(ow);
@@ -57,7 +57,7 @@ public class UpdateFile {
 		URLConnection urlConn = null;
 		InputStreamReader in = null;
 		try {
-			URL url = new URL("http://localhost/laravel/public/thecodebook/update");
+			URL url = new URL("http://172.19.195.162:8080/laravel/public/thecodebook/update");
 			urlConn = url.openConnection();
 			
 			if (urlConn != null && urlConn.getInputStream() != null) {
@@ -80,5 +80,7 @@ public class UpdateFile {
  
 		return sb.toString();
 	}
+    
+   
 }
 

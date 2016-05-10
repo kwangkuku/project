@@ -29,12 +29,12 @@ public class MyJsonParser {
         return jp;
     }
     public void process(){
-        codelist = new ArrayList<CodeList>();
+         codelist = new ArrayList<CodeList>();
          FileInputStream fstream = null;
          JsonReader reader = null;
          JSONParser parser = new JSONParser();
         try {
-            fstream = new FileInputStream("D:/การเรียน/project I/Project/GUI TheCodeBook/TheCodeBook1/testWriteflie.json");
+            fstream = new FileInputStream("JsonFile/testWriteflie.json");
            
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             

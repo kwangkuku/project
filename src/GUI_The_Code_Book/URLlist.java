@@ -12,6 +12,7 @@ public class URLlist {
     private String title;
     private String link;
     
+    
     public URLlist(int view_content, int answer_count,String title,String link){
         this.view_content = view_content;
         this.answer_count = answer_count;

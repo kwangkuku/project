@@ -29,6 +29,12 @@ import javax.swing.event.HyperlinkListener;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
 import org.fife.ui.rtextarea.RTextScrollPane;
+import static javax.management.Query.value;
+import static javax.management.Query.value;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -38,7 +44,7 @@ public class GUI extends javax.swing.JFrame {
     
     int xM;
     int yM;
-    
+    ArrayList<SharedCodeList> sharedList;
     private ArrayList<String> listTitleJava = new ArrayList<>();
     private ArrayList<String> listTitlePython = new ArrayList<>();
     private ArrayList<String> listTitleCSharp = new ArrayList<>();
@@ -49,12 +55,17 @@ public class GUI extends javax.swing.JFrame {
     public RSyntaxTextArea textAreaPython;
     public RSyntaxTextArea textAreaVB;
     
+   private  ArrayList<String> areaShared = new ArrayList<>();
+   public RSyntaxTextArea textAreaSharedCode;
+    
     private static final long serialVersionUID = 1L;
     
     public RTextScrollPane javaSP;
     public RTextScrollPane cshSP;
     public RTextScrollPane pythonSP;
     public RTextScrollPane vbSP;
+    
+    public RTextScrollPane sharedSP;
     
     public TestWeb tw;
     
@@ -78,11 +89,20 @@ public class GUI extends javax.swing.JFrame {
         setListBox(listTitleVB,vb_jList);
         
         
-        
+        //setListBox(areaShared,areaShared_jList); 
         
         this.back.setVisible(false);
         this.Drage.setHorizontalAlignment(JTextField.CENTER);
     }
+    
+   /* public void TestSharedCode() {
+        this.setUndecorated(true);
+        this.setVisible(true);
+        initComponents();
+        ParserJsonSharedCode.getParserJsonSharedCode();
+        setListBox(areaShared,areaShared_jList);
+        getTitleToList();
+    }*/
 
     private void setTextArea() {
         textAreaJava = new RSyntaxTextArea(20, 60);
@@ -110,16 +130,27 @@ public class GUI extends javax.swing.JFrame {
         textAreaVB.setCodeFoldingEnabled(true);
         textAreaVB.setText("");
         textAreaVB.setEnabled(false);
+       
+        textAreaSharedCode = new RSyntaxTextArea(20,60);
+        textAreaSharedCode.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
+        textAreaSharedCode.setCodeFoldingEnabled(true);
+        textAreaSharedCode.setText("");
+        textAreaSharedCode.setEnabled(false);
 
         RTextScrollPane java = new RTextScrollPane(textAreaJava);
         RTextScrollPane csh = new RTextScrollPane(textAreaCsh);
         RTextScrollPane python = new RTextScrollPane(textAreaPython);
         RTextScrollPane vb = new RTextScrollPane(textAreaVB);
         
+        RTextScrollPane shared = new RTextScrollPane(textAreaSharedCode);
+        
         java_panel.add(java);
         csh_panel.add(csh);
         python_panel.add(python);
         vb_panel.add(vb);
+        
+        area_SharedCode.add(shared);
+        
     }
     
     private void setGUI(){
@@ -163,6 +194,16 @@ public class GUI extends javax.swing.JFrame {
         listBox.setModel(model);
     }
     
+   /* public void getSharedCodeToList(){
+       ArrayList<SharedCodeList> sharedList =  ParserJsonSharedCode.getParserJsonSharedCode().sharedList;
+       for(int i=0;i<sharedList.size();i++){
+           String t = sharedList.get(i).getTitle();
+           String v= ""+sharedList.get(i).getViewcounter();
+           areaShared.add(t);
+           areaShared.add(v);
+       }
+   }*/
+    
     public String getContentByTitle(String title,String language){
         String content = null;
         ArrayList<CodeList> codelist = MyJsonParser.getMyJsonParser().codelist;
@@ -173,6 +214,20 @@ public class GUI extends javax.swing.JFrame {
         }
         return content;
     }
+    
+     public String getContentSharedByTitle(String title)
+     {
+     String content = null;
+     
+     for(int i =0;i< sharedList.size();i++)
+     {
+     if(sharedList.get(i).getTitle().equals(title)){
+         content = sharedList.get(i).getContent();
+     }
+     }
+     
+     return content;
+     }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -235,13 +290,23 @@ public class GUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         page2 = new javax.swing.JPanel();
         jPanelSharedCode = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        shared_page1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        list_SharedCode = new javax.swing.JList<>();
         bt_SearchShared = new javax.swing.JButton();
         TF_searchShared = new javax.swing.JTextField();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        area_SharedCode = new javax.swing.JEditorPane();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lb_title = new javax.swing.JLabel();
+        jb_Star1 = new javax.swing.JButton();
+        jb_Star2 = new javax.swing.JButton();
+        jb_Star3 = new javax.swing.JButton();
+        jb_Star5 = new javax.swing.JButton();
+        jb_Star4 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        descrip_area = new javax.swing.JTextArea();
+        area_SharedCode = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -249,7 +314,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Update");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -257,7 +322,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 80, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 90, 30));
 
         CloseButton.setText("        ");
         CloseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -526,33 +591,33 @@ public class GUI extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI_The_Code_Book/img/se-logo.png"))); // NOI18N
         page1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 230, 60));
-        page1.add(search_TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 230, 30));
+        page1.add(search_TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 230, 30));
 
-        search_BT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        search_BT.setFont(new java.awt.Font("Baskerville Old Face", 1, 16)); // NOI18N
         search_BT.setText("Search");
         search_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_BTActionPerformed(evt);
             }
         });
-        page1.add(search_BT, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, -1, 30));
+        page1.add(search_BT, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 30, -1, 30));
 
-        search_CB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        search_CB.setFont(new java.awt.Font("Baskerville Old Face", 1, 16)); // NOI18N
         search_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "stackoverflow", "webapps", "gamedev", "programmers", "webmaster" }));
         search_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_CBActionPerformed(evt);
             }
         });
-        page1.add(search_CB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 31, 120, 30));
+        page1.add(search_CB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 130, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 16)); // NOI18N
         jLabel2.setText("Search : ");
         page1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 16)); // NOI18N
         jLabel3.setText("Site : ");
-        page1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, -1));
+        page1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
 
         stackEx_tab.addTab("tab1", page1);
 
@@ -565,31 +630,75 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelSharedCode.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        shared_page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 0, 51));
         jLabel4.setText("SharedCode");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 30));
+        shared_page1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 320, 30));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("SearchTitle :");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
+        jPanelSharedCode.add(shared_page1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 40));
 
-        bt_SearchShared.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        list_SharedCode.setFont(new java.awt.Font("Baskerville Old Face", 1, 14)); // NOI18N
+        list_SharedCode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                list_SharedCodeMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(list_SharedCode);
+
+        jPanelSharedCode.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 320, 510));
+
+        bt_SearchShared.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         bt_SearchShared.setText("Search");
         bt_SearchShared.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_SearchSharedActionPerformed(evt);
             }
         });
-        jPanel2.add(bt_SearchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, -1));
-        jPanel2.add(TF_searchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 250, 30));
+        jPanelSharedCode.add(bt_SearchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 90, 30));
 
-        jScrollPane6.setViewportView(area_SharedCode);
+        TF_searchShared.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
+        jPanelSharedCode.add(TF_searchShared, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 250, 40));
 
-        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1190, 520));
+        jLabel5.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel5.setText("Search Title :");
+        jPanelSharedCode.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
-        jPanelSharedCode.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 610));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lb_title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel3.add(lb_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 220, 40));
+
+        jb_Star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageStar/Star2.png"))); // NOI18N
+        jPanel3.add(jb_Star1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 34, 32));
+
+        jb_Star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageStar/Star2.png"))); // NOI18N
+        jPanel3.add(jb_Star2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 34, 32));
+
+        jb_Star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageStar/Star2.png"))); // NOI18N
+        jPanel3.add(jb_Star3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 34, 32));
+
+        jb_Star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageStar/Star2.png"))); // NOI18N
+        jPanel3.add(jb_Star5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 34, 32));
+
+        jb_Star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageStar/Star2.png"))); // NOI18N
+        jPanel3.add(jb_Star4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 34, 32));
+
+        descrip_area.setColumns(20);
+        descrip_area.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        descrip_area.setRows(5);
+        jScrollPane8.setViewportView(descrip_area);
+
+        jPanel3.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 820, 70));
+
+        area_SharedCode.setMaximumSize(new java.awt.Dimension(810, 390));
+        area_SharedCode.setMinimumSize(new java.awt.Dimension(810, 390));
+        area_SharedCode.setPreferredSize(new java.awt.Dimension(810, 390));
+        area_SharedCode.setLayout(new java.awt.BorderLayout());
+        jPanel3.add(area_SharedCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 810, 390));
+
+        jPanelSharedCode.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1190, 620));
 
         tab.addTab("Shared Code", jPanelSharedCode);
 
@@ -649,16 +758,20 @@ public class GUI extends javax.swing.JFrame {
         String word = this.search_TF.getText().toString();
         String web = this.search_CB.getSelectedItem().toString();
         ArrayList<URLlist> listStackEx = ParserAPIStackEx.getParserAPIStackEx().getStackEx(word, web);
+       
         this.stackEx_TextField.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
         StringBuilder content = new StringBuilder();
         content.append("<html><body>");
+        //content.append("<TABLE widht= \"33%\" height=\"20%\">");
+        //content.append("<tr><td>EVALUATION </td><td>Title</td><td>View</td></tr></TABLE>");
         for (int i = 0; i < listStackEx.size(); i++) {
-            content.append("<br>View Count :" + listStackEx.get(i).getView_content() + "<br>");
+           
+            content.append("<FONT SIZE=5><b><br>View Count :" + listStackEx.get(i).getView_content() + "<br>");
             content.append("Answer Count :" + listStackEx.get(i).getAnswer_count() + "<br>");
             content.append("Title: <FONT COLOR=green>" + listStackEx.get(i).getTitle() + "</FONT>.<br>");
             content.append("URL :<a href=\""+listStackEx.get(i).getLink()+"\"");
             content.append(">" + listStackEx.get(i).getLink());
-            content.append("</a>.<br>");
+            content.append("</a>.<br></b></FONT SIZE>");
         }
 
         content.append("</body></html>");
@@ -668,6 +781,7 @@ public class GUI extends javax.swing.JFrame {
         
         this.stackEx_TextField.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
+                
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     tw = new TestWeb(e.getURL().toString());
                     System.out.println(e.getURL());
@@ -677,20 +791,12 @@ public class GUI extends javax.swing.JFrame {
                     stackEx_tab.setSelectedIndex(1);
                 }
             }
-        });
+     
+        }
+        
+        );
     
     }//GEN-LAST:event_search_BTActionPerformed
-
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
-        stackEx_tab.setSelectedIndex(0);
-        tw.dispose();
-        page2.removeAll();
-        //page2.removeAll();
-        
-        back.setVisible(true);
-        back.removeAll();
-    }//GEN-LAST:event_backActionPerformed
 
     private void java_copy_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_java_copy_btActionPerformed
         // TODO add your handling code here:
@@ -848,16 +954,58 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_search_CBActionPerformed
 
     private void bt_SearchSharedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_SearchSharedActionPerformed
-        String word = this.TF_searchShared.getText().toString();
-        ArrayList<SharedCodeList> sharedList =  ParserJsonSharedCode.getParserJsonSharedCode().sharedList;
-        this.area_SharedCode.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
+       String word = this.TF_searchShared.getText().toString();
+       sharedList = ParserJsonSharedCode.getParserJsonSharedCode().parseShared(word);
+       areaShared = new ArrayList<>();
+       for(int i =0;i< sharedList.size();i++)
+       {
+       areaShared.add(sharedList.get(i).getTitle());
+       
+       }
+         setListBox(areaShared,list_SharedCode);
+         
+         
+         
+         
+      /*String word = this.TF_searchShared.getText().toString();
+       ArrayList<SharedCodeList> sharedList = ParserJsonSharedCode.getParserJsonSharedCode().parseShared(word);
+      this.area_SharedCode.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
+      
+       //this.area_SharedCode.setContentType("text/html");
         StringBuilder content = new StringBuilder();
         content.append("<html><body>");
+        
+        
+        content.append("<pre><b><FONT SIZE =6>EVALUATION                             Title                                   View</FONT><b></pre>");
         for(int i=0;i<sharedList.size();i++){
-           String t = sharedList.get(i).getTitle();
-            content.append("<br>View Count :" + sharedList.get(i).getTitle() + "<br>"); 
-       }
+           for(Double j=1.0;j<= sharedList.get(i).getEvaluation() ;j++){ 
+           
+           content.append("<FONT SIZE=6><FONT COLOR = yellow>★</FONT></FONT>");
+           
+           }
+           
+            content.append("<FONT SIZE = 6>");
+            content.append("<br><b> <FONT SIZE=6><pre>                                <a href=\"" + sharedList.get(i).getTitle() + "\">"+sharedList.get(i).getTitle()+"</a></FONT> <FONT SIZE=6>                                     "+sharedList.get(i).getViewcounter()+"</FONT></b></pre>");
+            content.append("<FONT>");
+          
+        content.append("<br>");
+        content.append("</body></html>");
+        this.area_SharedCode.setText(content.toString());
+        //System.out.println(content.toString());
+        
+         this.area_SharedCode.addHyperlinkListener(new HyperlinkListener(){
+         public void hyperlinkUpdate(HyperlinkEvent e){
+           if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+
+           }
+         
+         }
+         });*/
        
+       
+            
+       
+    
         
     }//GEN-LAST:event_bt_SearchSharedActionPerformed
 
@@ -884,6 +1032,7 @@ public class GUI extends javax.swing.JFrame {
         if (selectedOption == JOptionPane.YES_OPTION) {
             UpdateFile upfile = new UpdateFile();
             upfile.createFile();
+            JOptionPane.showMessageDialog(this, "Update complete");
             listTitleJava = new ArrayList<>();
             listTitlePython = new ArrayList<>();
             listTitleCSharp = new ArrayList<>();
@@ -896,6 +1045,87 @@ public class GUI extends javax.swing.JFrame {
             setListBox(listTitleVB,vb_jList);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+
+        stackEx_tab.setSelectedIndex(0);
+      //  tw.dispose();
+        //page2.removeAll();
+
+        // back.setVisible(true);
+        // back.removeAll();
+
+    }//GEN-LAST:event_backActionPerformed
+
+    private void list_SharedCodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_SharedCodeMouseClicked
+      String title = list_SharedCode.getSelectedValue(); 
+      
+      
+      for(int i =0;i< sharedList.size();i++)
+      {
+        if(title == sharedList.get(i).getTitle())
+        {
+        sharedList.get(i).getDescription();
+        descrip_area.setText(sharedList.get(i).getDescription());
+        lb_title.setText(title);
+        double eva = 5.0;
+        Icon imageIcon = new ImageIcon("D:\\การเรียน\\project I\\Project\\GUI TheCodeBook\\TheCodeBook1\\TheCodeBook V 0.1\\src\\ImageStar\\Star1.png");
+        Icon imageIcon2 = new ImageIcon("D:\\การเรียน\\project I\\Project\\GUI TheCodeBook\\TheCodeBook1\\TheCodeBook V 0.1\\src\\ImageStar\\Star2.png");
+        for(double j = 0.9;j<sharedList.get(i).getEvaluation();j++){
+            if(j==0.9){
+                System.out.println("pass");
+                this.jb_Star1.setIcon(imageIcon);
+            }else if(j==1.9){
+                System.out.println("pass");
+                this.jb_Star2.setIcon(imageIcon);
+            }else if(j==2.9){
+                System.out.println("pass");
+                this.jb_Star3.setIcon(imageIcon);
+            }else if(j==3.9){
+                System.out.println("pass");
+                this.jb_Star4.setIcon(imageIcon);
+            }else if(j==4.9){
+                System.out.println("pass");
+                this.jb_Star5.setIcon(imageIcon);
+            }
+            eva = eva-1.0;
+        }
+        for(double k = 0.9 ; k<eva;k++){
+            if(k==0.9){
+                this.jb_Star5.setIcon(imageIcon2);
+            }else if(k==1.9){
+                this.jb_Star4.setIcon(imageIcon2);
+            }else if(k==2.9){
+                this.jb_Star3.setIcon(imageIcon2);
+            }else if(k==3.9){
+                this.jb_Star2.setIcon(imageIcon2);
+            }else if(k==4.9){
+                this.jb_Star1.setIcon(imageIcon2);
+            }
+        }
+            
+        }
+        textAreaSharedCode.setText(this.getContentSharedByTitle(title));
+
+      }
+//      double eva = 5.0;
+//      for(int i = 0;i<)
+//      for(int j=5;j <sharedList.get(j).getEvaluation();j--)
+//      {
+//      if(sharedList.get(j).getEvaluation().equals(j))
+//      {
+//       Icon imageIcon = new ImageIcon("ImageStar/Star1.png");
+//      //JLabel label = new JLabel(imageIcon);
+//      jb_Star1.setIcon(imageIcon);
+//      }else{}
+//      }
+      
+      
+      
+         
+      
+    }//GEN-LAST:event_list_SharedCodeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -936,7 +1166,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel CloseButton;
     private javax.swing.JLabel Drage;
     private javax.swing.JTextField TF_searchShared;
-    private javax.swing.JEditorPane area_SharedCode;
+    private javax.swing.JPanel area_SharedCode;
     public javax.swing.JButton back;
     private javax.swing.JButton bt_SearchShared;
     private javax.swing.JComboBox<String> cb_Size_java;
@@ -949,6 +1179,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField csh_jTextField;
     private javax.swing.JPanel csh_panel;
     private javax.swing.JPanel csh_tab;
+    private javax.swing.JTextArea descrip_area;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -956,7 +1187,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelSharedCode;
     private javax.swing.JPanel jPanelStackEx;
     private javax.swing.JScrollPane jScrollPane1;
@@ -964,13 +1195,21 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JButton java_Button;
     private javax.swing.JButton java_copy_bt;
     private javax.swing.JList<String> java_jList;
     private javax.swing.JTextField java_jTextField;
     private javax.swing.JPanel java_panel;
     private javax.swing.JPanel java_tab;
+    private javax.swing.JButton jb_Star1;
+    private javax.swing.JButton jb_Star2;
+    private javax.swing.JButton jb_Star3;
+    private javax.swing.JButton jb_Star4;
+    private javax.swing.JButton jb_Star5;
+    private javax.swing.JLabel lb_title;
+    private javax.swing.JList<String> list_SharedCode;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel miniButton;
     private javax.swing.JPanel page1;
@@ -984,6 +1223,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton search_BT;
     private javax.swing.JComboBox<String> search_CB;
     private javax.swing.JTextField search_TF;
+    private javax.swing.JPanel shared_page1;
     private javax.swing.JEditorPane stackEx_TextField;
     public javax.swing.JTabbedPane stackEx_tab;
     private javax.swing.JTabbedPane tab;

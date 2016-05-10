@@ -61,7 +61,7 @@ public class ParserAPIStackEx {
             if (entity != null) {
                 entity = new GzipDecompressingEntity(entity);
                 String jsonStr = EntityUtils.toString(entity);
-                //  System.out.println(jsonStr);
+                  //System.out.println(jsonStr);
                 parseStackExchange(jsonStr);
             } else {
                 System.out.println("NOTHING");
